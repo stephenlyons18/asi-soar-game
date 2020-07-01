@@ -11,11 +11,10 @@ import { BsArrowLeft } from "react-icons/bs";
 //eventually will request json from DB
 
 
-
-
 function App() {
   let i = 0;
-  const questions = require('./questions.json');
+  let questions = require('./questions.json');
+  
   let answer1Holder = questions[i].answer1.text;
   let answer2Holder = questions[i].answer2.text;
   let answer3Holder = questions[i].answer3.text;
@@ -23,12 +22,28 @@ function App() {
   let questionHolder = questions[i].questionText;
   let imageHolder = questions[i].picture;
 
+  //shuffles the order of the array to increase randomness
+  function shuffleArr (array){
+    for (var i = array.length - 1; i > 0; i--) {
+        var rand = Math.floor(Math.random() * (i + 1));
+        [array[i], array[rand]] = [array[rand], array[i]]
+    }
+  }
+//this portion randomly reduces the array to length of 10 (10 questions with no duplicates)
+  shuffleArr(questions);
+  
+  while (questions.length > 10){
+    let randomInt = Math.floor(Math.random * questions.length);
+    questions.splice(randomInt, 1);
+  }
+  
+
   return (
 
     <div className="App">
       <div className="container-fluid">
         <div className="jumbotron fluid-jumbotron">
-          <Image src="test.jpg/100px250" fluid/>
+          <Image src={imageHolder} fluid/>
           <h6>This is where the image will go</h6>
         </div>
         <div className="jumbotron fluid-jumbotron">
@@ -52,7 +67,7 @@ function App() {
             <Button variant='outline-danger' id='nav-backward'><BsArrowLeft/></Button>
           </div>
           <div className="pull-right">
-            <Button variant='outline-danger' id='nav-forward' className='pull-left'  onClick={i++, answer1Holder = questions[i].answer1.Text}><BsArrowRight/></Button>
+            <Button variant='outline-danger' id='nav-forward' className='pull-left'><BsArrowRight/></Button>
           </div>
          
           {/*This is the submit button that will apprear when the student has reached the end of the quiz and will check their answers and load form*/}
@@ -65,18 +80,20 @@ function App() {
             paddingLeft: 250,
             paddingRight:250
           }}>
+           
           <Form>
             <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter student email" />
+              <Form.Label>Student Email Address</Form.Label>
+              <Form.Control id="student-email" type="email" placeholder="name@student.csulb.edu" />
               <Form.Text className="text-muted">Do not use personal email address</Form.Text>
             </Form.Group>
 
             <Form.Group controlId='formBasicID'>
               <Form.Label>Student ID</Form.Label>
-              <Form.Control placeholder="Enter Student ID"/>
+              <Form.Control id="student-id" placeholder="Enter Student ID"/>
 
             </Form.Group>
+            {/*Eventually this portion will format the JSON and send to DB using onclick function */}
             <Button variant="outline-primary" id="submit-button">Submit</Button>
           </Form>
           </div>
