@@ -1,22 +1,26 @@
 [
     {
         "id": 1,
-        "questionText":"blah blah blah blah?",
-        "answer1":{"text": "blah blah blah", "value":"A"},
-        "answer2":{"text": "bleh bleh bleh", "value":"B"},
-        "answer3":{"text": "bluh bluh bluh", "value":"C"},
-        "answer4":{"text": "blih blih blih", "value":"D"},
-        "picture":"something.jpg",
-        "correctAnswer": "A"        
+        "text":"What is the zip code of Long Beach State University?",
+        "options": [
+            {"text": "90880", "value": "A"},
+            {"text": "90280", "value": "B"},
+            {"text": "90380", "value": "C"},
+            {"text": "None of the Above", "value": "D"}
+        ],
+        "imageSrc":"something.jpg",
+        "correctAnswer": "C"
     },
     {
         "id": 2,
-        "questionText":"blah blah blah?",
-        "answer1":{"text": "blah blah blah", "value":"A"},
-        "answer2":{"text": "blah blah blah", "value":"B"},
-        "answer3":{"text": "blah blah blah", "value":"C"},
-        "answer4":{"text": "blah blah blah", "value":"D"},
-        "picture":"something.jpg",
+        "text":"In what year was Long Beach State University established?",
+        "options": [
+            {"text": "1897", "value":"A"},
+            {"text": "1949", "value":"B"},
+            {"text": "1929", "value":"C"},
+            {"text": "1979", "value":"D"}
+        ],
+        "imageSrc":"something.jpg",
         "correctAnswer": "B"
     }
 ]

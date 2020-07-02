@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-arrows {
+  position: absolute;
+  top: 30%;
+  width: 50px;
+  height: auto;
+}
+
+.left {
+  left: 2rem;
+}
+
+.right {
+  right: 2rem;
+}

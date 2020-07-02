@@ -1,86 +1,116 @@
 import React from 'react';
 import './App.css';
+
+import 'holderjs'; // TODO: Remove once images are finalized
+
+// React Bootstrap Components
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Image from 'react-bootstrap/Image';
+import Jumbotron from 'react-bootstrap/Jumbotron';
+import Row from 'react-bootstrap/Row';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
-import Image from 'react-bootstrap/Image';
-import Form from 'react-bootstrap/Form';
-import { BsArrowRight } from "react-icons/bs";
+
+// React Icons Components
 import { BsArrowLeft } from "react-icons/bs";
-//Statement below should import the json file but it does not
-//eventually will request json from DB
+import { BsArrowRight } from "react-icons/bs";
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      current: 0,
+      questions: require('./questions.json'),
+      currentQuestions: []
+    };
+  }
+
+  // componentDidMount() {
+  //   // Get all questions from server
+  //   const allQuestions = require('./questions.json');
+    
+  //   // Show user 10 unique questions
+  //   // TODO
+  // //this portion randomly reduces the array to length of 10 (10 questions with no duplicates)
+  // this.shuffleArr(questions);
+    
+  //   this.setState({
+  //     questions: allQuestions
+  //   });
+
+  //   console.log(this.state.questions);
+  // }
 
 
-function App() {
-  let i = 0;
-  let questions = require('./questions.json');
-  
-  let answer1Holder = questions[i].answer1.text;
-  let answer2Holder = questions[i].answer2.text;
-  let answer3Holder = questions[i].answer3.text;
-  let answer4Holder = questions[i].answer4.text;
-  let questionHolder = questions[i].questionText;
-  let imageHolder = questions[i].picture;
+  // TODO: Save answer to each question
+  handleQuestion = (val) => console.log(val);
+
+  navLeft = () => {
+    if (this.state.current > 0) {
+      this.setState(state => ({
+        current: state.current - 1
+      }));
+    }
+  }
+  navRight = () => {
+    if (this.state.current < this.state.questions.length - 1) {
+      this.setState(state => ({
+        current: state.current + 1
+      }));
+    }
+  }
 
   //shuffles the order of the array to increase randomness
-  function shuffleArr (array){
+  shuffleArr (array) {
     for (var i = array.length - 1; i > 0; i--) {
         var rand = Math.floor(Math.random() * (i + 1));
         [array[i], array[rand]] = [array[rand], array[i]]
     }
-  }
-//this portion randomly reduces the array to length of 10 (10 questions with no duplicates)
-  shuffleArr(questions);
-  
-  while (questions.length > 10){
-    let randomInt = Math.floor(Math.random * questions.length);
-    questions.splice(randomInt, 1);
-  }
-  
+  } 
 
-  return (
-
-    <div className="App">
-      <div className="container-fluid">
-        <div className="jumbotron fluid-jumbotron">
-          <Image src={imageHolder} fluid/>
-          <h6>This is where the image will go</h6>
-        </div>
-        <div className="jumbotron fluid-jumbotron">
-          <h3>{questionHolder}</h3>
-        </div>
-        <div className="container" id="button group">
-          {/* Radio buttons for the answers to the questions */}
-          <ToggleButtonGroup type="radio" name="answers" vertical>
-            
-              <ToggleButton value={1} id="answer1" variant="outline-primary" block>{answer1Holder}</ToggleButton>
-              <ToggleButton value={2} id="answer2" variant="outline-primary" block>{answer2Holder}</ToggleButton>          
-              <ToggleButton value={3} id="answer3" variant="outline-primary" block>{answer3Holder}</ToggleButton>
-              <ToggleButton value={4} id="answer4" variant="outline-primary" block>{answer4Holder}</ToggleButton>
-            
-          </ToggleButtonGroup>
-          </div>
+  render() {
+    return (
+      <div className="App">
+        <Container fluid>
+          <Row>
+            <Col>
+              <Jumbotron fluid>
+                <Image src={"holder.js/300px250?text=Sample Image " + this.state.current} fluid />
+              </Jumbotron>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Jumbotron fluid>
+                <BsArrowLeft className="text-primary nav-arrows left" onClick={this.navLeft} />
+                <h2>{this.state.questions[this.state.current].text}</h2>
+                <BsArrowRight className="text-primary nav-arrows right" onClick={this.navRight} />
+              </Jumbotron>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <ToggleButtonGroup size="lg" name={"question-" + this.state.current} onChange={this.handleQuestion}>
+                {this.state.questions[this.state.current].options.map(option => (
+                  <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
+                ))}              
+              </ToggleButtonGroup>
+            </Col>
+          </Row>
           
-          {/* still need navigation buttons, but need to figure out JSON import issue first */}
-          {/* Eventually these buttons will be put on the sides respectively */}
-          <div className="pull-left">
-            <Button variant='outline-danger' id='nav-backward'><BsArrowLeft/></Button>
-          </div>
-          <div className="pull-right">
-            <Button variant='outline-danger' id='nav-forward' className='pull-left'><BsArrowRight/></Button>
-          </div>
-         
           {/*This is the submit button that will apprear when the student has reached the end of the quiz and will check their answers and load form*/}
-          <Button variant='outline-primary' id='check-answers'>Check Answers</Button>
-        
+          {/* <Button variant='outline-primary' id='check-answers'>Check Answers</Button>         */}
 
           {/*This is the component that will be loaded at the end of the quiz*/}
           {/*This is a form element and will take the user's information*/}
-          <div className='container-sm' style={{
+          {/* <div className='container-sm' style={{
             paddingLeft: 250,
             paddingRight:250
           }}>
-           
+            
           <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Student Email Address</Form.Label>
@@ -93,12 +123,12 @@ function App() {
               <Form.Control id="student-id" placeholder="Enter Student ID"/>
 
             </Form.Group>
-            {/*Eventually this portion will format the JSON and send to DB using onclick function */}
             <Button variant="outline-primary" id="submit-button">Submit</Button>
           </Form>
-          </div>
+          </div> */}
+        </Container>
       </div>
-    </div>
-  );
+    );
+  }
 }
 export default App;
