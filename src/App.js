@@ -23,22 +23,22 @@ class App extends React.Component {
     super(props);
     this.state = {
       current: 0,
-      allQuestions: [],
       currentQuestions: [],
       isLoaded: false,
       error: null
     };
+    this.allQuestions = [];
   }
 
   componentDidMount() {
-    // Get all questions from server
-    // const allQuestions = require('./questions.json');
-    
-    fetch("URL to S3")
+    // Get all questions from server    
+    fetch("https://soarquestions.s3-us-west-1.amazonaws.com/questions.json")
       .then(res => res.json())
       .then(result => {
+        this.allQuestions = result;
+        this.shuffleQuestions(this.allQuestions);
         this.setState({
-          allQuestions: result.questions,
+          currentQuestions: this.allQuestions.slice(0, 11),
           isLoaded: true
         });
       }, error => {
@@ -47,13 +47,6 @@ class App extends React.Component {
           error: error
         });
       });
-    
-    let questions = this.state.allQuestions;
-    
-    this.shuffleQuestions(questions);
-    this.setState({
-      questions: questions.slice(0, 11)
-    });
   }
 
   // TODO: Save answer to each question
@@ -68,7 +61,7 @@ class App extends React.Component {
   }
 
   navRight = () => {
-    if (this.state.current < this.state.questions.length - 1) {
+    if (this.state.current < this.state.currentQuestions.length - 1) {
       this.setState(state => ({
         current: state.current + 1
       }));
@@ -94,7 +87,6 @@ class App extends React.Component {
 
     fetch("https://309u5urphk.execute-api.us-west-1.amazonaws.com/pre-test-1/uploadscore", {
       method: 'POST',
-      mode: 'no-cors',
       headers: {
         'Content-Type': 'application/json',
         'x-api-key': 'PTf2wlXBFd52BtT3IHotQ2u3lUdxgCN4zNJtgd5b'
@@ -131,7 +123,7 @@ class App extends React.Component {
               <Col>
                 <Jumbotron fluid>
                   <BsArrowLeft className="text-primary nav-arrows left" onClick={this.navLeft} />
-                  <h2>{this.state.questions[this.state.current].text}</h2>
+                  <h2>{this.state.currentQuestions[this.state.current].text}</h2>
                   <BsArrowRight className="text-primary nav-arrows right" onClick={this.navRight} />
                 </Jumbotron>
               </Col>
@@ -139,7 +131,7 @@ class App extends React.Component {
             <Row>
               <Col>
                 <ToggleButtonGroup size="lg" name={"question-" + this.state.current} onChange={this.handleQuestion}>
-                  {this.state.questions[this.state.current].options.map(option => (
+                  {this.state.currentQuestions[this.state.current].options.map(option => (
                     <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
                   ))}              
                 </ToggleButtonGroup>
