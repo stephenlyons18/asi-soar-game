@@ -10,6 +10,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+import ProgressBar from 'react-bootstrap/ProgressBar'
 import Row from 'react-bootstrap/Row';
 import Spinner from 'react-bootstrap/Spinner'
 import ToggleButton from 'react-bootstrap/ToggleButton';
@@ -37,11 +38,7 @@ class App extends React.Component {
       .then(res => res.json())
       .then(result => {
         this.allQuestions = result;
-        this.shuffleQuestions(this.allQuestions);
-        this.setState({
-          currentQuestions: this.allQuestions.slice(0, 11),
-          isLoaded: true
-        });
+        this.initQuestions();
       }, error => {
         this.setState({
           isLoaded: true,
@@ -50,8 +47,18 @@ class App extends React.Component {
       });
   }
 
-  // TODO: Save answer to each question
-  handleQuestion = (val) => console.log(val);
+  initQuestions = () => {
+    this.shuffleQuestions(this.allQuestions);
+    this.setState({
+      currentQuestions: this.allQuestions.slice(0, 11),
+      isLoaded: true
+    });
+  }
+
+  handleQuestion = (val) => {
+    // TODO: Save answer to each question
+    console.log("Needs Implementation :(");
+  }
 
   navLeft = () => {
     if (this.state.current > 0) {
@@ -77,7 +84,8 @@ class App extends React.Component {
   }
 
   checkAnswers = () => {
-    // TODO: Stephen please implement
+    // TODO: Check all questions and generate a score
+    console.log("Needs Implementation :(");
   }
 
   submit = () => {
@@ -123,6 +131,9 @@ class App extends React.Component {
         </Container>
       );
     } else {
+      const progress = (this.state.current + 1) * 10;
+      const isLastQuestion = this.state.current + 1 === this.state.currentQuestions.length;
+
       return (
         <div className="App">
           <Container fluid>
@@ -135,6 +146,7 @@ class App extends React.Component {
             </Row>
             <Row>
               <Col>
+                <ProgressBar now={progress} label={`${progress}%`} />
                 <Jumbotron fluid>
                   <BsArrowLeft className="text-primary nav-arrows left" onClick={this.navLeft} />
                   <h2>{this.state.currentQuestions[this.state.current].text}</h2>
@@ -151,9 +163,14 @@ class App extends React.Component {
                 </ToggleButtonGroup>
               </Col>
             </Row>
-            
-            {/*This is the submit button that will appear when the student has reached the end of the quiz and will check their answers and load form*/}
-            {/* <Button variant='outline-primary' id='check-answers'>Check Answers</Button>         */}
+
+            {isLastQuestion &&
+              <Row className="mt-4">
+                <Col>
+                  <Button variant='primary' size="lg" onClick={this.checkAnswers}>Check Your Answers</Button>
+                </Col>
+              </Row>
+            }
   
             {/*This is the component that will be loaded at the end of the quiz*/}
             {/*This is a form element and will take the user's information*/}
