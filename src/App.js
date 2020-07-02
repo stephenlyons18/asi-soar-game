@@ -11,6 +11,7 @@ import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Row from 'react-bootstrap/Row';
+import Spinner from 'react-bootstrap/Spinner'
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
@@ -75,6 +76,10 @@ class App extends React.Component {
     }
   }
 
+  checkAnswers = () => {
+    // TODO: Stephen please implement
+  }
+
   submit = () => {
     // Prepare data to send to server
     const data = {
@@ -106,8 +111,17 @@ class App extends React.Component {
       // TODO: Show an error message
       return null;
     } else if (!this.state.isLoaded) {
-      // TODO: Show a spinner
-      return null;
+      return (
+        <Container fluid>
+          <Row>
+            <Col>
+              <Spinner animation="border" variant="primary" role="status">
+                <span className="sr-only">Loading...</span>
+              </Spinner>
+            </Col>
+          </Row>
+        </Container>
+      );
     } else {
       return (
         <div className="App">
@@ -138,7 +152,7 @@ class App extends React.Component {
               </Col>
             </Row>
             
-            {/*This is the submit button that will apprear when the student has reached the end of the quiz and will check their answers and load form*/}
+            {/*This is the submit button that will appear when the student has reached the end of the quiz and will check their answers and load form*/}
             {/* <Button variant='outline-primary' id='check-answers'>Check Answers</Button>         */}
   
             {/*This is the component that will be loaded at the end of the quiz*/}
@@ -167,6 +181,6 @@ class App extends React.Component {
         </div>
       );
     }
-    }
+  }
 }
 export default App;
