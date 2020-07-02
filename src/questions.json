@@ -1,26 +1,28 @@
-[
-    {
-        "id": 1,
-        "text":"What is the zip code of Long Beach State University?",
-        "options": [
-            {"text": "90880", "value": "A"},
-            {"text": "90280", "value": "B"},
-            {"text": "90380", "value": "C"},
-            {"text": "None of the Above", "value": "D"}
-        ],
-        "imageSrc":"something.jpg",
-        "correctAnswer": "C"
-    },
-    {
-        "id": 2,
-        "text":"In what year was Long Beach State University established?",
-        "options": [
-            {"text": "1897", "value":"A"},
-            {"text": "1949", "value":"B"},
-            {"text": "1929", "value":"C"},
-            {"text": "1979", "value":"D"}
-        ],
-        "imageSrc":"something.jpg",
-        "correctAnswer": "B"
-    }
-]
+{
+    "questions": [
+        {
+            "id": 1,
+            "text":"What is the zip code of Long Beach State University?",
+            "options": [
+                {"text": "90880", "value": "A"},
+                {"text": "90280", "value": "B"},
+                {"text": "90380", "value": "C"},
+                {"text": "None of the Above", "value": "D"}
+            ],
+            "imageSrc":"something.jpg",
+            "correctAnswer": "C"
+        },
+        {
+            "id": 2,
+            "text":"In what year was Long Beach State University established?",
+            "options": [
+                {"text": "1897", "value":"A"},
+                {"text": "1949", "value":"B"},
+                {"text": "1929", "value":"C"},
+                {"text": "1979", "value":"D"}
+            ],
+            "imageSrc":"something.jpg",
+            "correctAnswer": "B"
+        }
+    ]
+}
