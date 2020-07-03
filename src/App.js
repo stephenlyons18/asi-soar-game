@@ -26,6 +26,7 @@ class App extends React.Component {
     this.state = {
       current: 0,
       currentQuestions: [],
+      answers: [],
       isLoaded: false,
       error: null
     };
@@ -56,8 +57,13 @@ class App extends React.Component {
   }
 
   handleQuestion = (val) => {
-    // TODO: Save answer to each question
-    console.log("Needs Implementation :(");
+    this.setState(state => {
+      const newAnswers = [...state.answers];
+      newAnswers[state.current] = val;
+      return {
+        answers: newAnswers
+      }
+    });
   }
 
   navLeft = () => {
@@ -132,7 +138,9 @@ class App extends React.Component {
       );
     } else {
       const progress = (this.state.current + 1) * 10;
-      const isLastQuestion = this.state.current + 1 === this.state.currentQuestions.length;
+      const isLastQuestion = this.state.current === this.state.currentQuestions.length - 1;
+      const currentQuestions = this.state.currentQuestions;
+      const current = this.state.current;
 
       return (
         <div className="App">
@@ -140,7 +148,7 @@ class App extends React.Component {
             <Row>
               <Col>
                 <Jumbotron fluid>
-                  <Image src={"holder.js/300px250?text=Sample Image " + this.state.current} fluid />
+                  <Image src={"holder.js/300px250?text=Sample Image " + current} fluid />
                 </Jumbotron>
               </Col>
             </Row>
@@ -149,15 +157,15 @@ class App extends React.Component {
                 <ProgressBar now={progress} label={`${progress}%`} />
                 <Jumbotron fluid>
                   <BsArrowLeft className="text-primary nav-arrows left" onClick={this.navLeft} />
-                  <h2>{this.state.currentQuestions[this.state.current].text}</h2>
+                  <h2>{currentQuestions[current].text}</h2>
                   <BsArrowRight className="text-primary nav-arrows right" onClick={this.navRight} />
                 </Jumbotron>
               </Col>
             </Row>
             <Row>
               <Col>
-                <ToggleButtonGroup size="lg" name={"question-" + this.state.current} onChange={this.handleQuestion}>
-                  {this.state.currentQuestions[this.state.current].options.map(option => (
+                <ToggleButtonGroup size="lg" name={"question-" + current} onChange={this.handleQuestion}>
+                  {currentQuestions[current].options.map(option => (
                     <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
                   ))}              
                 </ToggleButtonGroup>
