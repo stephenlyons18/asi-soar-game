@@ -4,6 +4,7 @@ import './App.css';
 import 'holderjs'; // TODO: Remove once images are finalized
 
 // React Bootstrap Components
+import Alert from 'react-bootstrap/Alert'
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
@@ -28,9 +29,13 @@ class App extends React.Component {
       currentQuestions: [],
       answers: [],
       isLoaded: false,
+      hasPassed: false,
+      hasFailed: false,
       error: null
     };
     this.allQuestions = [];
+    this.userForm = {};
+    this.score = 0;
   }
 
   componentDidMount() {
@@ -48,6 +53,16 @@ class App extends React.Component {
       });
   }
 
+  resetQuiz = () => {
+    this.initQuestions();
+    this.setState({
+      current: 0,
+      answers: [],
+      hasFailed: false
+    });
+    this.score = 0;
+  }
+
   initQuestions = () => {
     this.shuffleQuestions(this.allQuestions);
     this.setState({
@@ -56,7 +71,7 @@ class App extends React.Component {
     });
   }
 
-  handleQuestion = (val) => {
+  saveQuestion = (val) => {
     this.setState(state => {
       const newAnswers = [...state.answers];
       newAnswers[state.current] = val;
@@ -64,6 +79,12 @@ class App extends React.Component {
         answers: newAnswers
       }
     });
+  }
+
+  saveForm = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.userForm[name] = value;
   }
 
   navLeft = () => {
@@ -90,34 +111,56 @@ class App extends React.Component {
   }
 
   checkAnswers = () => {
-    // TODO: Check all questions and generate a score
-    console.log("Needs Implementation :(");
+    this.state.answers.forEach((value, index) => {
+      if (value === this.state.currentQuestions[index].correctAnswer) {
+        this.score++;
+      }
+    });
+
+    if (this.score >= 7) {
+      this.setState({
+        hasPassed: true
+      });
+    } else {
+      this.setState({
+        hasFailed: true
+      });
+    }
   }
 
-  submit = () => {
+  submit = (event) => {
+    // TODO: Form validation
+
+    event.preventDefault();
+    event.stopPropagation();
+
     // Prepare data to send to server
     const data = {
-      "student_id": "",
-      "firstName": "",
-      "lastName": "",
-      "email": "",
-      "score": 9
+      "student_id": this.userForm.studentID,
+      "firstName": this.userForm.firstName,
+      "lastName": this.userForm.lastName,
+      "email": this.userForm.email,
+      "score": this.score
     }
 
-    fetch("https://309u5urphk.execute-api.us-west-1.amazonaws.com/pre-test-1/uploadscore", {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': 'PTf2wlXBFd52BtT3IHotQ2u3lUdxgCN4zNJtgd5b'
-      },
-      body: JSON.stringify(data)
-    })
-    .then(res => res.json())
-    .then(result => {
-      console.log(result);
-    }, error => {
-      console.log(error);
-    });
+    console.log(data);
+
+    // TODO: Uncomment below to test server
+
+    // fetch("https://309u5urphk.execute-api.us-west-1.amazonaws.com/pre-test-1/uploadscore", {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'x-api-key': 'PTf2wlXBFd52BtT3IHotQ2u3lUdxgCN4zNJtgd5b'
+    //   },
+    //   body: JSON.stringify(data)
+    // })
+    // .then(res => res.json())
+    // .then(result => {
+    //   console.log(result);
+    // }, error => {
+    //   console.log(error);
+    // });
   }
 
   render() {
@@ -136,11 +179,72 @@ class App extends React.Component {
           </Row>
         </Container>
       );
+    } else if (this.state.hasPassed) {
+      return (
+        <Container fluid>
+          <Row>
+            <Col className="fullHeight d-flex align-items-center">
+              <Form className="mx-auto p-5 userForm" onSubmit={this.submit}>
+                <Form.Group controlId="firstName">
+                  <Form.Label>First Name</Form.Label>
+                  <Form.Control required type="text" size="lg" placeholder="John" name="firstName" onChange={this.saveForm} />
+                </Form.Group>
+                <Form.Group controlId="lastName">
+                  <Form.Label>Last Name</Form.Label>
+                  <Form.Control required type="text" size="lg" name="lastName" placeholder="Doe" onChange={this.saveForm} />
+                </Form.Group>
+                <Form.Group controlId="email">
+                  <Form.Label>Student Email Address</Form.Label>
+                  <Form.Control required type="email" size="lg" name="email" placeholder="name@student.csulb.edu" onChange={this.saveForm} />
+                  <Form.Text className="text-muted">Please use your CSULB email address</Form.Text>
+                </Form.Group>
+                <Form.Group controlId='studentID'>
+                  <Form.Label>Student ID</Form.Label>
+                  <Form.Control required type="text" size="lg" name="studentID" placeholder="Student ID" onChange={this.saveForm} />
+                </Form.Group>
+                <Button variant="primary" type="submit" size="lg">Submit</Button>
+                <Alert variant="info" className="mt-3">
+                  <Alert.Heading>Disclaimer</Alert.Heading>
+                  <p>
+                    Lorem ipsum dolor sit amet, per ut ipsum intellegat, ad eum quot nihil repudiandae.
+                    In homero repudiandae has, ut sit porro zril. An mel dolor reprimique assueverit,
+                    amet nostrum eu cum. Mei te laoreet appellantur. <strong>Winners will be notified and
+                    informed on August 20, the week before classes!</strong>
+                  </p>
+                </Alert>
+              </Form>
+            </Col>
+          </Row>
+        </Container>
+      );      
+    } else if (this.state.hasFailed) {
+      return (
+        <Container fluid>
+          <Row>
+            <Col className="fullHeight d-flex align-items-center">
+              <Alert variant="danger" className="mx-auto p-4 noticeAlert">
+                <Alert.Heading className="text-center">Darn... you didn't pass</Alert.Heading>
+                <p>
+                  Lorem ipsum dolor sit amet, per ut ipsum intellegat, ad eum quot nihil repudiandae.
+                  In homero repudiandae has, ut sit porro zril. An mel dolor reprimique assueverit,
+                  amet nostrum eu cum. Mei te laoreet appellantur.
+                </p>
+                <hr />
+                <div className="d-flex justify-content-center">
+                  <Button variant="danger" size="lg" onClick={this.resetQuiz}>Let's Try Again</Button>
+                </div>
+              </Alert>
+            </Col>
+          </Row>
+        </Container>
+      );
     } else {
+      // Quick accessors
       const progress = (this.state.current + 1) * 10;
       const isLastQuestion = this.state.current === this.state.currentQuestions.length - 1;
       const currentQuestions = this.state.currentQuestions;
       const current = this.state.current;
+      const answers = this.state.answers;
 
       return (
         <div className="App">
@@ -164,7 +268,7 @@ class App extends React.Component {
             </Row>
             <Row>
               <Col>
-                <ToggleButtonGroup size="lg" name={"question-" + current} onChange={this.handleQuestion}>
+                <ToggleButtonGroup size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion}>
                   {currentQuestions[current].options.map(option => (
                     <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
                   ))}              
@@ -179,29 +283,6 @@ class App extends React.Component {
                 </Col>
               </Row>
             }
-  
-            {/*This is the component that will be loaded at the end of the quiz*/}
-            {/*This is a form element and will take the user's information*/}
-            {/* <div className='container-sm' style={{
-              paddingLeft: 250,
-              paddingRight:250
-            }}>
-              
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>Student Email Address</Form.Label>
-                <Form.Control id="student-email" type="email" placeholder="name@student.csulb.edu" />
-                <Form.Text className="text-muted">Do not use personal email address</Form.Text>
-              </Form.Group>
-  
-              <Form.Group controlId='formBasicID'>
-                <Form.Label>Student ID</Form.Label>
-                <Form.Control id="student-id" placeholder="Enter Student ID"/>
-  
-              </Form.Group>
-              <Button variant="outline-primary" id="submit-button">Submit</Button>
-            </Form>
-            </div> */}
           </Container>
         </div>
       );

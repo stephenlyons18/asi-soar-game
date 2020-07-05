@@ -51,3 +51,16 @@
 .right {
   right: 2rem;
 }
+
+.userForm {
+  width: 35vw;
+  border: 1px solid #ced4da;
+}
+
+.noticeAlert {
+  width: 50vw;
+}
+
+.fullHeight {
+  height: 100vh;
+}
