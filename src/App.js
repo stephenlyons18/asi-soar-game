@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import 'holderjs'; // TODO: Remove once images are finalized
+
 
 // React Bootstrap Components
 import Alert from 'react-bootstrap/Alert'
@@ -252,7 +252,7 @@ class App extends React.Component {
             <Row>
               <Col>
                 <Jumbotron fluid>
-                  <Image src={"holder.js/300px250?text=Sample Image " + current} fluid />
+                  <Image src={currentQuestions[current].imageSrc} fluid />
                 </Jumbotron>
               </Col>
             </Row>
@@ -261,7 +261,7 @@ class App extends React.Component {
                 <ProgressBar now={progress} label={`${progress}%`} />
                 <Jumbotron fluid>
                   <BsArrowLeft className="text-primary nav-arrows left" onClick={this.navLeft} />
-                  <h2>{currentQuestions[current].text}</h2>
+                  <h2 style={{paddingLeft: 100, paddingRight: 100}}>{currentQuestions[current].text}</h2>
                   <BsArrowRight className="text-primary nav-arrows right" onClick={this.navRight} />
                 </Jumbotron>
               </Col>

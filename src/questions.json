@@ -1,28 +1,242 @@
-{
-    "questions": [
-        {
-            "id": 1,
-            "text":"What is the zip code of Long Beach State University?",
-            "options": [
-                {"text": "90880", "value": "A"},
-                {"text": "90280", "value": "B"},
-                {"text": "90380", "value": "C"},
-                {"text": "None of the Above", "value": "D"}
-            ],
-            "imageSrc":"something.jpg",
-            "correctAnswer": "C"
-        },
-        {
-            "id": 2,
-            "text":"In what year was Long Beach State University established?",
-            "options": [
-                {"text": "1897", "value":"A"},
-                {"text": "1949", "value":"B"},
-                {"text": "1929", "value":"C"},
-                {"text": "1979", "value":"D"}
-            ],
-            "imageSrc":"something.jpg",
-            "correctAnswer": "B"
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "text": "What is the zip code of Long Beach State University?",
+        "options": [
+            {
+                "text": "90880",
+                "value": "A"
+            },
+            {
+                "text": "90280",
+                "value": "B"
+            },
+            {
+                "text": "90380",
+                "value": "C"
+            },
+            {
+                "text": "None of the Above",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "C"
+    },
+    {
+        "id": 2,
+        "text": "In what year was Long Beach State University established?",
+        "options": [
+            {
+                "text": "1897",
+                "value": "A"
+            },
+            {
+                "text": "1949",
+                "value": "B"
+            },
+            {
+                "text": "1929",
+                "value": "C"
+            },
+            {
+                "text": "1979",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "B"
+    },
+    {
+        "id": 3,
+        "text": "Which is your favorite marvel movie?",
+        "options": [
+            {
+                "text": "Deadpool",
+                "value": "A"
+            },
+            {
+                "text": "Avenger:Infinity war",
+                "value": "B"
+            },
+            {
+                "text": "Avengers: Endgame",
+                "value": "C"
+            },
+            {
+                "text": "Guardians of the Galaxy",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "A"
+    },
+    {
+        "id": 4,
+        "text": "Who is your favorite avenger?",
+        "options": [
+            {
+                "text": "Iron Man",
+                "value": "A"
+            },
+            {
+                "text": "Captain America",
+                "value": "B"
+            },
+            {
+                "text": "Thor",
+                "value": "C"
+            },
+            {
+                "text": "Hulk",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "B"
+    },
+    {
+        "id": 5,
+        "text": "Choose an answer?",
+        "options": [
+            {
+                "text": "A",
+                "value": "A"
+            },
+            {
+                "text": "B",
+                "value": "B"
+            },
+            {
+                "text": "C",
+                "value": "C"
+            },
+            {
+                "text": "D",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "B"
+    },
+    {
+        "id": 6,
+        "text": "Do you want to be a millionaire?",
+        "options": [
+            {
+                "text": "Yes",
+                "value": "A"
+            },
+            {
+                "text": "No",
+                "value": "B"
+            },
+            {
+                "text": "Maybe",
+                "value": "C"
+            },
+            {
+                "text": "I'll think about it",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "B"
+    },
+    {
+        "id": 7,
+        "text": "This is a sample question. Guess the right answer.",
+        "options": [
+            {
+                "text": "Option B",
+                "value": "A"
+            },
+            {
+                "text": "Option C",
+                "value": "B"
+            },
+            {
+                "text": "Option A",
+                "value": "C"
+            },
+            {
+                "text": "Option D",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "B"
+    },
+    {
+        "id": 8,
+        "text": "Where is the USU located on campus?",
+        "options": [
+            {
+                "text": "Near the SRWC",
+                "value": "A"
+            },
+            {
+                "text": "Next to the library",
+                "value": "B"
+            },
+            {
+                "text": "Close to the Walter Pyramid",
+                "value": "C"
+            },
+            {
+                "text": "Next to the cafe",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "D"
+    },
+    {
+        "id": 9,
+        "text": "What are some of the activities the rec has to offer",
+        "options": [
+            {
+                "text": "Swimming in the pool",
+                "value": "A"
+            },
+            {
+                "text": "Climbing on the indoor rock wall",
+                "value": "B"
+            },
+            {
+                "text": "Running on the 200M indoor track",
+                "value": "C"
+            },
+            {
+                "text": "All of the above",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "B"
+    },
+    {
+        "id": 10,
+        "text": "This is a question with really long answers",
+        "options": [
+            {
+                "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
+                "value": "A"
+            },
+            {
+                "text": "Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+                "value": "B"
+            },
+            {
+                "text": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
+                "value": "C"
+            },
+            {
+                "text": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "something.jpg",
+        "correctAnswer": "B"
+    }
+]
