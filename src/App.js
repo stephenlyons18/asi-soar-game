@@ -247,21 +247,26 @@ class App extends React.Component {
     }
     else if (!this.state.rules){
       return(
-        //Have this container floating (transparent) with the image of CSULB in background
-        <Container fluid style={{paddingLeft: 200, paddingRight: 200}}>
+        <div className="background">
+        
+        <Container fluid style={{paddingLeft: 250, paddingRight: 250}}>
           <Row className="fullHeight d-flex align-items-center">
             <Col>
-              <Jumbotron fluid>
+              
                 <div class="splash">
-                  <h1 ><u><strong>Rules</strong></u></h1>
-                  {/* This is where the rules will go with text aligned in the center */}
-                  <Button variant="outline-primary" onClick={this.startQuiz}>Start the Quiz!</Button>
+                  <h1 ><u><strong>Welcome!</strong></u></h1>
+                  <p>Here we will have a welcome message for the incoming freshmen and transfer students</p>
+                  <br/>
+                  <h2><u><strong>Rules</strong></u></h2>
+                  <p>This is where the rules of the game will be placed. You must be an incoming freshman or transfer student etc.</p>
+                  <Button variant="primary" onClick={this.startQuiz}>Start the Quiz!</Button>
                 </div>
-              </Jumbotron>
+              
 
             </Col>
           </Row>
         </Container>
+        </div>
       );
 
     }
@@ -278,7 +283,7 @@ class App extends React.Component {
           <Container fluid>
             <Row>
               <Col>
-                <Jumbotron fluid>
+                <Jumbotron style={{borderRadius: 25}} fluid>
                   <Image src={currentQuestions[current].imageSrc} fluid />
                 </Jumbotron>
               </Col>
@@ -286,7 +291,7 @@ class App extends React.Component {
             <Row>
               <Col>
                 <ProgressBar now={progress} label={`${progress}%`} />
-                <Jumbotron fluid>
+                <Jumbotron style={{borderBottomLeftRadius:10, borderBottomRightRadius: 10}} fluid>
                   <BsArrowLeft className="text-primary nav-arrows left" onClick={this.navLeft} />
                   <h2 style={{paddingLeft: 100, paddingRight: 100}}>{currentQuestions[current].text}</h2>
                   <BsArrowRight className="text-primary nav-arrows right" onClick={this.navRight} />
