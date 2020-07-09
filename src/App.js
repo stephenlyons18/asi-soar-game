@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 
 
-
 // React Bootstrap Components
 import Alert from 'react-bootstrap/Alert'
 import Button from 'react-bootstrap/Button';
@@ -31,7 +30,8 @@ class App extends React.Component {
       isLoaded: false,
       hasPassed: false,
       hasFailed: false,
-      error: null
+      error: null,
+      rules: false
     };
     this.allQuestions = [];
     this.userForm = {};
@@ -61,6 +61,12 @@ class App extends React.Component {
       hasFailed: false
     });
     this.score = 0;
+  }
+
+  startQuiz = () => {
+    this.setState({
+      rules: true
+    });
   }
 
   initQuestions = () => {
@@ -238,7 +244,28 @@ class App extends React.Component {
           </Row>
         </Container>
       );
-    } else {
+    }
+    else if (!this.state.rules){
+      return(
+        //Have this container floating (transparent) with the image of CSULB in background
+        <Container fluid style={{paddingLeft: 200, paddingRight: 200}}>
+          <Row className="fullHeight d-flex align-items-center">
+            <Col>
+              <Jumbotron fluid>
+                <div class="splash">
+                  <h1 ><u><strong>Rules</strong></u></h1>
+                  {/* This is where the rules will go with text aligned in the center */}
+                  <Button variant="outline-primary" onClick={this.startQuiz}>Start the Quiz!</Button>
+                </div>
+              </Jumbotron>
+
+            </Col>
+          </Row>
+        </Container>
+      );
+
+    }
+    else if (this.state.rules){
       // Quick accessors
       const progress = (this.state.current + 1) * 10;
       const isLastQuestion = this.state.current === this.state.currentQuestions.length - 1;
