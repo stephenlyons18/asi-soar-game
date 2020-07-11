@@ -1,210 +1,466 @@
 [
     {
         "id": 1,
-        "text": "What is the zip code of Long Beach State University?",
+        "text": "How many ASI Executive Officers does LBSU have?",
         "options": [
             {
-                "text": "90880",
+                "text": "1",
                 "value": "A"
             },
             {
-                "text": "90280",
+                "text": "2",
                 "value": "B"
             },
             {
-                "text": "90380",
+                "text": "3",
                 "value": "C"
             },
             {
-                "text": "None of the Above",
+                "text": "4",
                 "value": "D"
             }
         ],
-        "imageSrc": "something.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q1.jpg",
         "correctAnswer": "C"
     },
     {
         "id": 2,
-        "text": "In what year was Long Beach State University established?",
+        "text": "The ASI President is also ____________ of ASI.",
         "options": [
             {
-                "text": "1897",
+                "text": "Lead Coordinator",
                 "value": "A"
             },
             {
-                "text": "1949",
+                "text": "Student Manager",
                 "value": "B"
             },
             {
-                "text": "1929",
+                "text": "Chief Executive Officer",
                 "value": "C"
             },
             {
-                "text": "1979",
+                "text": "Communications Manager",
                 "value": "D"
             }
         ],
-        "imageSrc": "something.jpg",
-        "correctAnswer": "B"
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q2.jpg",
+        "correctAnswer": "C"
     },
     {
         "id": 3,
-        "text": "Which is your favorite marvel movie?",
+        "text": "Shared Governance basically means that ____________.",
         "options": [
             {
-                "text": "Deadpool",
+                "text": "All areas of campus life, including students, should be included in every major decision.",
                 "value": "A"
             },
             {
-                "text": "Avenger:Infinity war",
+                "text": "The ASI Execs share the responsibility to lead the University.",
                 "value": "B"
             },
             {
-                "text": "Avengers: Endgame",
+                "text": "Only Students and ASI Execs oversee ASI.",
                 "value": "C"
             },
             {
-                "text": "Guardians of the Galaxy",
+                "text": "ASI Staff is solely in charge of making decisions for ASI.",
                 "value": "D"
             }
         ],
-        "imageSrc": "something.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q3.jpg",
         "correctAnswer": "A"
     },
     {
         "id": 4,
-        "text": "Who is your favorite avenger?",
+        "text": "All are part of ASI’s 3 main campus facilities EXCEPT the ____________.",
         "options": [
             {
-                "text": "Iron Man",
+                "text": "University Student Union",
                 "value": "A"
             },
             {
-                "text": "Captain America",
+                "text": "University Library",
                 "value": "B"
             },
             {
-                "text": "Thor",
+                "text": "Student Recreation & Wellness Center",
                 "value": "C"
             },
             {
-                "text": "Hulk",
+                "text": "Isabel Patterson Child Development Center",
                 "value": "D"
             }
         ],
-        "imageSrc": "something.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q4.jpg",
         "correctAnswer": "B"
     },
     {
         "id": 5,
-        "text": "Choose an answer?",
+        "text": "The ASI Beach Pantry is on the ____________ floor of the University Student Union.",
         "options": [
             {
-                "text": "A",
+                "text": "First floor",
                 "value": "A"
             },
             {
-                "text": "B",
+                "text": "Second floor",
                 "value": "B"
             },
             {
-                "text": "C",
+                "text": "Third floor",
                 "value": "C"
             },
             {
-                "text": "D",
+                "text": "Fifth floor",
                 "value": "D"
             }
         ],
-        "imageSrc": "something.jpg",
-        "correctAnswer": "B"
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q5.jpg",
+        "correctAnswer": "C"
     },
     {
         "id": 6,
-        "text": "Do you want to be a millionaire?",
+        "text": "The Student Rec & Wellness Center offers all the below services EXCEPT ____________.",
         "options": [
             {
-                "text": "Yes",
+                "text": "Fitness Classes",
                 "value": "A"
             },
             {
-                "text": "No",
+                "text": "Rock & Outdoor Activities",
                 "value": "B"
             },
             {
-                "text": "Maybe",
+                "text": "Aquatics Area",
                 "value": "C"
             },
             {
-                "text": "I'll think about it",
+                "text": "Indoor Sleeping Cots",
                 "value": "D"
             }
         ],
-        "imageSrc": "something.jpg",
-        "correctAnswer": "B"
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q6.jpg",
+        "correctAnswer": "D"
     },
     {
         "id": 7,
-        "text": "This is a sample question. Guess the right answer.",
+        "text": "The ASI department that hosts events, concerts, virtual events, and programs is ____________.",
         "options": [
             {
-                "text": "Option B",
+                "text": "Beach Pride Events",
                 "value": "A"
             },
             {
-                "text": "Option C",
+                "text": "ASI Communications",
                 "value": "B"
             },
             {
-                "text": "Option A",
+                "text": "22 West Media",
                 "value": "C"
             },
             {
-                "text": "Option D",
+                "text": "Beach Team",
                 "value": "D"
             }
         ],
-        "imageSrc": "something.jpg",
-        "correctAnswer": "B"
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q7.jpg",
+        "correctAnswer": "A"
     },
     {
         "id": 8,
-        "text": "Where is the USU located on campus?",
+        "text": "ASI’s Instagram username is ____________.",
         "options": [
             {
-                "text": "Near the SRWC",
+                "text": "@csulb.asi",
                 "value": "A"
             },
             {
-                "text": "Next to the library",
+                "text": "@asi.csulb",
                 "value": "B"
             },
             {
-                "text": "Close to the Walter Pyramid",
+                "text": "@asicsulb",
                 "value": "C"
             },
             {
-                "text": "Next to the cafe",
+                "text": "@csulbasi",
                 "value": "D"
             }
         ],
-        "imageSrc": "something.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q8.jpg",
         "correctAnswer": "D"
     },
     {
         "id": 9,
-        "text": "What are some of the activities the rec has to offer",
+        "text": "The Shark mascot was officially adopted by LBSU students in ____________.",
         "options": [
             {
-                "text": "Swimming in the pool",
+                "text": "March 2019",
                 "value": "A"
             },
             {
-                "text": "Climbing on the indoor rock wall",
+                "text": "April 2019",
                 "value": "B"
             },
             {
-                "text": "Running on the 200M indoor track",
+                "text": "May 2019",
+                "value": "C"
+            },
+            {
+                "text": "June 2019",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q9.jpg",
+        "correctAnswer": "C"
+    },
+    {
+        "id": 10,
+        "text": "What is the nickname of the Long Beach State baseball team?",
+        "options": [
+            {
+                "text": "49ers",
+                "value": "A"
+            },
+            {
+                "text": "Dirtbags",
+                "value": "B"
+            },
+            {
+                "text": "Sharks",
+                "value": "C"
+            },
+            {
+                "text": "Beach",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "B"
+    },
+    {
+        "id": 11,
+        "text": "LBSU is famous for being featured on this television station during this week.",
+        "options": [
+            {
+                "text": "Shark Week on Discovery Channel",
+                "value": "A"
+            },
+            {
+                "text": "Summer Kickoff Week on Disney Channel",
+                "value": "B"
+            },
+            {
+                "text": "Sea Animal Week on National Geographic",
+                "value": "C"
+            },
+            {
+                "text": "Ocean Week on Nick Jr.",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "A"
+    },
+    {
+        "id": 12,
+        "text": "What is the name of the ASI funded, student-run radio station?",
+        "options": [
+            {
+                "text": "Beach Beats",
+                "value": "A"
+            },
+            {
+                "text": "KJazzy ",
+                "value": "B"
+            },
+            {
+                "text": "22 West Radio",
+                "value": "C"
+            },
+            {
+                "text": "R&B with LB",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "C"
+    },
+    {
+        "id": 13,
+        "text": "Steve Martin, an alum of Long Beach State, majored in which subject?",
+        "options": [
+            {
+                "text": "Theatre Arts",
+                "value": "A"
+            },
+            {
+                "text": "Photography",
+                "value": "B"
+            },
+            {
+                "text": "Philosophy",
+                "value": "C"
+            },
+            {
+                "text": "Filmography",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "C"
+    },
+    {
+        "id": 14,
+        "text": "In fall of 2019, CSULB had this number of enrolled students.",
+        "options": [
+            {
+                "text": "43,360",
+                "value": "A"
+            },
+            {
+                "text": "38,074",
+                "value": "B"
+            },
+            {
+                "text": "32,784",
+                "value": "C"
+            },
+            {
+                "text": "30,290",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "B"
+    },
+    {
+        "id": 15,
+        "text": "True or false: every student at CSULB is a member of ASI.",
+        "options": [
+            {
+                "text": "True",
+                "value": "A"
+            },
+            {
+                "text": "False",
+                "value": "B"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "A"
+    },
+    {
+        "id": 16,
+        "text": "In what year was ASI formally incorporated established?",
+        "options": [
+            {
+                "text": "1949",
+                "value": "A"
+            },
+            {
+                "text": "1950",
+                "value": "B"
+            },
+            {
+                "text": "1962",
+                "value": "C"
+            },
+            {
+                "text": "1956",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "D"
+    },
+    {
+        "id": 17,
+        "text": "Which of the following is NOT an ASI-run event?",
+        "options": [
+            {
+                "text": "Week of Welcome",
+                "value": "A"
+            },
+            {
+                "text": "RecFest",
+                "value": "B"
+            },
+            {
+                "text": "Commencement/Graduation",
+                "value": "C"
+            },
+            {
+                "text": "An Evening With",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "C"
+    },
+    {
+        "id": 18,
+        "text": "How many facilities are owned and operated by ASI?",
+        "options": [
+            {
+                "text": "2",
+                "value": "A"
+            },
+            {
+                "text": "4",
+                "value": "B"
+            },
+            {
+                "text": "3",
+                "value": "C"
+            },
+            {
+                "text": "5",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "C"
+    },
+    {
+        "id": 19,
+        "text": "How often are ASI student government elections?",
+        "options": [
+            {
+                "text": "Every spring semester",
+                "value": "A"
+            },
+            {
+                "text": "Every semester",
+                "value": "B"
+            },
+            {
+                "text": "Every two years",
+                "value": "C"
+            },
+            {
+                "text": "Every fall semester",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "A"
+    },
+    {
+        "id": 20,
+        "text": "Which of the following groups are to be included in all major university decisions under “shared governance”?",
+        "options": [
+            {
+                "text": "Faculty",
+                "value": "A"
+            },
+            {
+                "text": "Students",
+                "value": "B"
+            },
+            {
+                "text": "Staff",
                 "value": "C"
             },
             {
@@ -212,31 +468,7 @@
                 "value": "D"
             }
         ],
-        "imageSrc": "something.jpg",
-        "correctAnswer": "B"
-    },
-    {
-        "id": 10,
-        "text": "This is a question with really long answers",
-        "options": [
-            {
-                "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.",
-                "value": "A"
-            },
-            {
-                "text": "Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-                "value": "B"
-            },
-            {
-                "text": "Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-                "value": "C"
-            },
-            {
-                "text": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.",
-                "value": "D"
-            }
-        ],
-        "imageSrc": "something.jpg",
-        "correctAnswer": "B"
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
+        "correctAnswer": "D"
     }
 ]

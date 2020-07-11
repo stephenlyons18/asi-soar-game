@@ -72,7 +72,7 @@ class App extends React.Component {
   initQuestions = () => {
     this.shuffleQuestions(this.allQuestions);
     this.setState({
-      currentQuestions: this.allQuestions.slice(0, 11),
+      currentQuestions: this.allQuestions.slice(0, 10),
       isLoaded: true
     });
   }
@@ -153,20 +153,20 @@ class App extends React.Component {
 
     // TODO: Uncomment below to test server
 
-    // fetch("https://309u5urphk.execute-api.us-west-1.amazonaws.com/pre-test-1/uploadscore", {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json',
-    //     'x-api-key': 'PTf2wlXBFd52BtT3IHotQ2u3lUdxgCN4zNJtgd5b'
-    //   },
-    //   body: JSON.stringify(data)
-    // })
-    // .then(res => res.json())
-    // .then(result => {
-    //   console.log(result);
-    // }, error => {
-    //   console.log(error);
-    // });
+    fetch("https://309u5urphk.execute-api.us-west-1.amazonaws.com/pre-test-1/uploadscore", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': 'PTf2wlXBFd52BtT3IHotQ2u3lUdxgCN4zNJtgd5b'
+      },
+      body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(result => {
+      console.log(result);
+    }, error => {
+      console.log(error);
+    });
   }
 
   render() {
@@ -254,12 +254,26 @@ class App extends React.Component {
             <Col>
               
                 <div class="splash">
-                  <h1 ><u><strong>Welcome!</strong></u></h1>
-                  <p>Here we will have a welcome message for the incoming freshmen and transfer students</p>
+                  <h2><strong><u>Introduction and Rules</u></strong></h2>
+                  <img class="temporary-pics/ASI+LBSUlogo_wide_CMYK-CLR.jpg"/>
+                  <h3 ><u><strong>Introduction</strong></u></h3>
+                  <p>Welcome to ASI at Long Beach State University! We are excited to have you as a part of the Beach community for the new 2020-2021 school year. Although things may look different for the coming semester due to the global pandemic, we want you to know that our ASI resources and services are still open and available to you. As part of your orientation, in order to learn more about the student body, LBSU and our history we have put together a fun and informative quiz for you to take. Test out your knowledge, take in some Beach facts, and who knows you may even win a prize in the process! </p>
+                  <p><u>Prizes and winners will be announced the week before classes  (between Aug. 17-21)!</u></p>
                   <br/>
-                  <h2><u><strong>Rules</strong></u></h2>
-                  <p>This is where the rules of the game will be placed. You must be an incoming freshman or transfer student etc.</p>
-                  <Button variant="primary" onClick={this.startQuiz}>Start the Quiz!</Button>
+                  <h3><u><strong>Game Rules:</strong></u></h3>
+                  <ol>
+                    <li>Only newly entering students (transfer/first year) may enter </li>
+                    <li>Must enter a valid CSULB ID number and email address to enter </li>
+                    <li>No looking up answers on the internet  </li>
+                    <li>This is the honor system -- please do not share answers  </li>
+                    <li>Only passing scores (70%+!) will be entered to win prizes </li>
+                    <li>Students may take the quiz as many times as it takes them to pass </li>
+                    <li>Once you do pass, please do not take again (duplicate student IDs will be removed) </li>
+                    <li>One prize maximum per student entry </li>
+                    <li>Have fun & learn new things! </li>
+                    
+                  </ol>
+                  <Button variant="primary" onClick={this.startQuiz}>PLAY THE GAME!</Button>
                 </div>
               
 

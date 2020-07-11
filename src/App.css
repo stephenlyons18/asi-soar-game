@@ -69,15 +69,18 @@
   background-color: grey;
   padding-left: 50px;
   padding-right: 50px;
+  padding-top: 20px;
   border-radius: 25px;
-  opacity: .9;
+  opacity: .95;
   padding-bottom: 10px;
 }
 .background{
   /* this image will be replaced by another when given */
-  background-image: url(https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Colorful-Geometric-Simple-Background-Image.jpg);
+  background-image: url(temporary-pics/USU_BUSH.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 .jumbo{
   background-color: grey;
