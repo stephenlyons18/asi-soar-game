@@ -76,7 +76,7 @@
 }
 .background{
   /* this image will be replaced by another when given */
-  background-image: url(temporary-pics/USU_BUSH.jpg);
+  background-image: url(https://soar-images.s3-us-west-1.amazonaws.com/USU_BUSH.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

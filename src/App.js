@@ -255,7 +255,7 @@ class App extends React.Component {
               
                 <div class="splash">
                   <h2><strong><u>Introduction and Rules</u></strong></h2>
-                  <img class="temporary-pics/ASI+LBSUlogo_wide_CMYK-CLR.jpg"/>
+                  <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid/>
                   <h3 ><u><strong>Introduction</strong></u></h3>
                   <p>Welcome to ASI at Long Beach State University! We are excited to have you as a part of the Beach community for the new 2020-2021 school year. Although things may look different for the coming semester due to the global pandemic, we want you to know that our ASI resources and services are still open and available to you. As part of your orientation, in order to learn more about the student body, LBSU and our history we have put together a fun and informative quiz for you to take. Test out your knowledge, take in some Beach facts, and who knows you may even win a prize in the process! </p>
                   <p><u>Prizes and winners will be announced the week before classes  (between Aug. 17-21)!</u></p>
