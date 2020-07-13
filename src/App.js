@@ -167,6 +167,9 @@ class App extends React.Component {
     }, error => {
       console.log(error);
     });
+
+   
+    
   }
 
   render() {
@@ -187,9 +190,13 @@ class App extends React.Component {
       );
     } else if (this.state.hasPassed) {
       return (
-        <Container fluid>
+        <div className="background2">
+        <Container fluid style={{paddingLeft: 250, paddingRight: 250}}>
+        <div class="splash">
           <Row>
-            <Col className="fullHeight d-flex align-items-center">
+            <Col >
+             
+              
               <Form className="mx-auto p-5 userForm" onSubmit={this.submit}>
                 <Form.Group controlId="firstName">
                   <Form.Label>First Name</Form.Label>
@@ -201,7 +208,7 @@ class App extends React.Component {
                 </Form.Group>
                 <Form.Group controlId="email">
                   <Form.Label>Student Email Address</Form.Label>
-                  <Form.Control required type="email" size="lg" name="email" placeholder="name@student.csulb.edu" onChange={this.saveForm} />
+                  <Form.Control required type="email" size="lg" name="email" placeholder="name@student.csulb.edu" onChange={this.saveForm} pattern="[a-z.]*[@]\bstudent.csulb.edu" required/>
                   <Form.Text className="text-muted">Please use your CSULB email address</Form.Text>
                 </Form.Group>
                 <Form.Group controlId='studentID'>
@@ -219,9 +226,12 @@ class App extends React.Component {
                   </p>
                 </Alert>
               </Form>
+              
             </Col>
           </Row>
+          </div>
         </Container>
+        </div>
       );      
     } else if (this.state.hasFailed) {
       return (
@@ -255,7 +265,7 @@ class App extends React.Component {
               
                 <div class="splash">
                   <h2><strong><u>Introduction and Rules</u></strong></h2>
-                  <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid/>
+                  <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{height: 150, width: 300}}/>
                   <h3 ><u><strong>Introduction</strong></u></h3>
                   <p>Welcome to ASI at Long Beach State University! We are excited to have you as a part of the Beach community for the new 2020-2021 school year. Although things may look different for the coming semester due to the global pandemic, we want you to know that our ASI resources and services are still open and available to you. As part of your orientation, in order to learn more about the student body, LBSU and our history we have put together a fun and informative quiz for you to take. Test out your knowledge, take in some Beach facts, and who knows you may even win a prize in the process! </p>
                   <p><u>Prizes and winners will be announced the week before classes  (between Aug. 17-21)!</u></p>
@@ -295,13 +305,9 @@ class App extends React.Component {
       return (
         <div className="App">
           <Container fluid>
-            <Row>
-              <Col>
-                <Jumbotron style={{borderRadius: 25}} fluid>
-                  <Image src={currentQuestions[current].imageSrc} fluid />
-                </Jumbotron>
-              </Col>
-            </Row>
+          
+            <Image src={currentQuestions[current].imageSrc} fluid style={{}}/>
+                
             <Row>
               <Col>
                 <ProgressBar now={progress} label={`${progress}%`} />
@@ -333,6 +339,7 @@ class App extends React.Component {
         </div>
       );
     }
+    
   }
 }
 export default App;

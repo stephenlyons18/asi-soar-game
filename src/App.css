@@ -66,7 +66,7 @@
 }
 .splash{
   text-align: center;
-  background-color: grey;
+  background-color: lightgrey;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 20px;
@@ -82,8 +82,17 @@
   background-position: center center;
   background-attachment: fixed;
 }
-.jumbo{
-  background-color: grey;
-  border-radius: 25px;
+.background2{
+  background-image: url(https://bc3-production-blobs-us-east-2.s3.us-east-2.amazonaws.com/617485f8-c2ed-11ea-908e-ecf4bbd6f9a0?response-content-disposition=inline%3B%20filename%3D%22usuTest-5.jpg%22%3B%20filename%2A%3DUTF-8%27%27usuTest-5.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAS5PME4CT5QW2PJJU%2F20200713%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200713T041128Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=24cc04fe3c3794f016d607e4f2bed1459b630d7674f767067f69b354a04805b3);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.ol{
+  text-align: left;
+}
+.li{
+  text-align: left;
 }
 
