@@ -65,34 +65,42 @@
   height: 100vh;
 }
 .splash{
-  text-align: center;
-  background-color: lightgrey;
-  padding-left: 50px;
-  padding-right: 50px;
+  background-color: white;
+  padding-left:100px;
+  padding-right: 100px;
   padding-top: 20px;
-  border-radius: 25px;
+  border-radius: 15px;
   opacity: .95;
-  padding-bottom: 10px;
+ overflow-y: auto;
+  
+
 }
-.background{
+.rules-background{
   /* this image will be replaced by another when given */
   background-image: url(https://soar-images.s3-us-west-1.amazonaws.com/USU_BUSH.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  position: relative;
+  height: 100%;
 }
 .background2{
-  background-image: url(https://bc3-production-blobs-us-east-2.s3.us-east-2.amazonaws.com/617485f8-c2ed-11ea-908e-ecf4bbd6f9a0?response-content-disposition=inline%3B%20filename%3D%22usuTest-5.jpg%22%3B%20filename%2A%3DUTF-8%27%27usuTest-5.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAS5PME4CT5QW2PJJU%2F20200713%2Fus-east-2%2Fs3%2Faws4_request&X-Amz-Date=20200713T041128Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=24cc04fe3c3794f016d607e4f2bed1459b630d7674f767067f69b354a04805b3);
+  background-image: url(https://soar-images.s3-us-west-1.amazonaws.com/usu-image.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
 }
-.ol{
-  text-align: left;
+.rules-container{
+  padding-left: 250px;
+  padding-right: 250px;
 }
-.li{
-  text-align: left;
+.background-failed{
+  background-image: url(https://soar-images.s3-us-west-1.amazonaws.com/which-alum-are-you.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
