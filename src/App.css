@@ -71,8 +71,10 @@
   padding-top: 20px;
   border-radius: 15px;
   opacity: .95;
- overflow-y: auto;
-  
+  overflow-y: auto;
+  padding-bottom: 10px;
+  margin-left: 20%;
+  margin-right: 20%;
 
 }
 .rules-background{
@@ -92,10 +94,7 @@
   background-position: center center;
   background-attachment: fixed;
 }
-.rules-container{
-  padding-left: 250px;
-  padding-right: 250px;
-}
+
 .background-failed{
   background-image: url(https://soar-images.s3-us-west-1.amazonaws.com/which-alum-are-you.jpg);
   background-repeat: no-repeat;
@@ -103,4 +102,25 @@
   background-position: center center;
   background-attachment: fixed;
 }
-
+@media(max-width: 576px){
+  .splash{
+    
+    border-radius: 15px;
+    opacity: .95;
+    overflow-y: auto;
+    margin-left: 2%;
+    margin-right:2%;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  .Form{
+    padding-left: 0%;
+    padding-right: 0%;
+    margin-left: 0%;
+    margin-right:0%;
+  }
+  .Col{
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+}

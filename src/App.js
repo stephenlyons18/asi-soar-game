@@ -195,7 +195,7 @@ class App extends React.Component {
       return (
         <div className="background2">
           
-        <Container fluid style={{paddingLeft: 250, paddingRight: 250}}>
+        <Container fluid >
         <div class="splash">
         <div className="text-center">
         <h3>Congratuations! You scored {this.score}/10!</h3>
@@ -272,11 +272,10 @@ class App extends React.Component {
       return(
         <div className="rules-background">
         
-        <Container fluid style={{paddingLeft: 200, paddingRight: 200}}>
-        <div className="splash">
+        <Container fluid >
+         <div className="splash">
           <Row className="fullHeight d-flex align-items-center">
             <Col>
-              
                 
                   <div className="text-center">
                     <h1 className="sr-only"><strong><u>Introduction and Rules</u></strong></h1>
@@ -284,7 +283,7 @@ class App extends React.Component {
                     <h2><strong>Introduction</strong></h2>
                     <p>Welcome to ASI at Long Beach State University! We are excited to have you as a part of the Beach community for the new 2020-2021 school year. Although things may look different for the coming semester due to the global pandemic, we want you to know that our ASI resources and services are still open and available to you. As part of your orientation, in order to learn more about the student body, LBSU and our history we have put together a fun and informative quiz for you to take. Test out your knowledge, take in some Beach facts, and who knows you may even win a prize in the process! </p>
                     <p>Before playing the game, take a moment to review the resources and rules below</p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/6cftoxb0uOM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <iframe width="90%" height="315" src="https://www.youtube.com/embed/6cftoxb0uOM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     <hr/>
                     <br/>
                     <Button href="https://soar-pdfs.s3-us-west-1.amazonaws.com/SM20_COMM_SOAR.pdf" variant="outline-primary">Review the ASI SOAR PPT</Button>
@@ -307,9 +306,6 @@ class App extends React.Component {
                   <div class="text-center">
                    <Button variant="primary" onClick={this.startQuiz} >PLAY THE GAME!</Button>
                   </div>
-                
-              
-
             </Col>
           </Row>
           </div>
