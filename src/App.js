@@ -282,13 +282,13 @@ class App extends React.Component {
                     <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{height: 150, width: 300}}/>
                     <h2><strong>Introduction</strong></h2>
                     <p>Welcome to ASI at Long Beach State University! We are excited to have you as a part of the Beach community for the new 2020-2021 school year. Although things may look different for the coming semester due to the global pandemic, we want you to know that our ASI resources and services are still open and available to you. As part of your orientation, in order to learn more about the student body, LBSU and our history we have put together a fun and informative quiz for you to take. Test out your knowledge, take in some Beach facts, and who knows you may even win a prize in the process! </p>
-                    <Button variant="primary" onClick={this.startQuiz} >PLAY THE GAME!</Button>
+                    <Button variant="primary" onClick={this.startQuiz}>PLAY THE GAME!</Button>
                     <p>Before playing the game, take a moment to review the resources and rules below</p>
                     <iframe width="90%" height="315" src="https://www.youtube.com/embed/6cftoxb0uOM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     <hr/>
                     <br/>
-                    <Button href="https://soar-pdfs.s3-us-west-1.amazonaws.com/SM20_COMM_SOAR.pdf" variant="outline-primary" style={{marginRight: 15}}>Review the ASI SOAR PPT</Button>
-                    <Button href="https://www.asicsulb.org/corporate/resources/about-us" variant="outline-primary">Review ASI History</Button>
+                    <Button href="https://soar-pdfs.s3-us-west-1.amazonaws.com/SM20_COMM_SOAR.pdf" variant="outline-primary" style={{marginRight: 15}} target="_blank">Review the ASI SOAR PPT</Button>
+                    <Button href="https://www.asicsulb.org/corporate/resources/about-us" variant="outline-primary" target="_blank">Review ASI History</Button>
                     <strong><p>Prizes and winners will be announced the week before classes (between Aug. 17-21)! Keep an eye out in your CSULB email inbox for updates as the date nears.</p></strong>
                     
                     <h2><strong>Game Rules</strong></h2>
