@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-
 // React Bootstrap Components
 import Alert from 'react-bootstrap/Alert'
 import Button from 'react-bootstrap/Button';
@@ -203,7 +202,7 @@ class App extends React.Component {
         </div>
           <Row>
             <Col>
-              <Form className="mx-auto p-5 userForm" onSubmit={this.submit}>
+              <Form onSubmit={this.submit}>
                 <Form.Group controlId="firstName">
                   <Form.Label>First Name</Form.Label>
                   <Form.Control required type="text" placeholder="John" name="firstName" onChange={this.saveForm} />
@@ -241,6 +240,7 @@ class App extends React.Component {
               
             </Col>
           </Row>
+          <iframe src="https://csulb.qualtrics.com/jfe/form/SV_6E8EAzBlCWPZISF" height="400px" width="100%"></iframe>
           </div>
         </Container>
         </div>
@@ -282,11 +282,12 @@ class App extends React.Component {
                     <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{height: 150, width: 300}}/>
                     <h2><strong>Introduction</strong></h2>
                     <p>Welcome to ASI at Long Beach State University! We are excited to have you as a part of the Beach community for the new 2020-2021 school year. Although things may look different for the coming semester due to the global pandemic, we want you to know that our ASI resources and services are still open and available to you. As part of your orientation, in order to learn more about the student body, LBSU and our history we have put together a fun and informative quiz for you to take. Test out your knowledge, take in some Beach facts, and who knows you may even win a prize in the process! </p>
+                    <Button variant="primary" onClick={this.startQuiz} >PLAY THE GAME!</Button>
                     <p>Before playing the game, take a moment to review the resources and rules below</p>
                     <iframe width="90%" height="315" src="https://www.youtube.com/embed/6cftoxb0uOM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     <hr/>
                     <br/>
-                    <Button href="https://soar-pdfs.s3-us-west-1.amazonaws.com/SM20_COMM_SOAR.pdf" variant="outline-primary">Review the ASI SOAR PPT</Button>
+                    <Button href="https://soar-pdfs.s3-us-west-1.amazonaws.com/SM20_COMM_SOAR.pdf" variant="outline-primary" style={{marginRight: 15}}>Review the ASI SOAR PPT</Button>
                     <Button href="https://www.asicsulb.org/corporate/resources/about-us" variant="outline-primary">Review ASI History</Button>
                     <strong><p>Prizes and winners will be announced the week before classes (between Aug. 17-21)! Keep an eye out in your CSULB email inbox for updates as the date nears.</p></strong>
                     
@@ -306,10 +307,20 @@ class App extends React.Component {
                   <div class="text-center">
                    <Button variant="primary" onClick={this.startQuiz} >PLAY THE GAME!</Button>
                   </div>
+
+                  <hr/>
+                  <div className="footer">
+                    <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 | (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
+                    <hr/>
+                    <p><a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
+                    <p><i>Copyright © 2020. Associated Students, Inc</i></p>
+                 </div>
             </Col>
           </Row>
           </div>
+          
         </Container>
+        
         </div>
       );
 
@@ -318,9 +329,12 @@ class App extends React.Component {
       // Quick accessors
       const progress = (this.state.current + 1) * 10;
       const isLastQuestion = this.state.current === this.state.currentQuestions.length - 1;
+      const isFirstQuestion = this.state.current === this.state.currentQuestions.length - 10;
+      const isSecondQuestion = this.state.current === this.state.currentQuestions.length - 9;
       const currentQuestions = this.state.currentQuestions;
       const current = this.state.current;
       const answers = this.state.answers;
+      
 
       return (
         <div className="App">
@@ -331,25 +345,17 @@ class App extends React.Component {
             <Row>
               <Col>
                 <ProgressBar now={progress} label={`${progress}%`} />
-                <Jumbotron style={{borderBottomLeftRadius:10, borderBottomRightRadius: 10}} fluid>
+                <Jumbotron class="jumbo" fluid>
+                  {/* {isFirstQuestion &&
+                  <p class="pull-right"><i>Click the arrow for<br/> next question</i></p>
+                  }
+                  {isSecondQuestion && 
+                  <p class="pull-left"><i>Click the arrow for<br/> previous question</i></p>
+                  } */}
                   <BsArrowLeft className="text-primary nav-arrows left" onClick={this.navLeft} />
-                  <h3 style={{paddingLeft: 100, paddingRight: 100}}>{currentQuestions[current].text}</h3>
+                  <h3 style={{paddingLeft: 100, paddingRight: 100}}>{currentQuestions[current].text}</h3>            
                   <BsArrowRight className="text-primary nav-arrows right" onClick={this.navRight} />
-                </Jumbotron>
-              </Col>
-            </Row>
-            
-            <Row>
-              <Col>
-                <ToggleButtonGroup size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion}>
-                  {currentQuestions[current].options.map(option => (
-                    <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
-                  ))}              
-                </ToggleButtonGroup>
-              </Col>
-            </Row>
-
-            {isLastQuestion &&
+                  {isLastQuestion &&
               <Row className="mt-4">
                 <Col>
                   <Button variant='primary' size="lg" onClick={this.checkAnswers}>Check Your Answers</Button>
@@ -358,6 +364,21 @@ class App extends React.Component {
               </Row>
               
             }
+                </Jumbotron>
+              </Col>
+            </Row>
+            
+            <Row>
+              <Col class="px-5 mx-auto">
+                <ToggleButtonGroup size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion}>
+                  {currentQuestions[current].options.map(option => (
+                    <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
+                  ))}              
+                </ToggleButtonGroup>
+              </Col>
+            </Row>
+
+            
           </Container>
         </div>
       );
