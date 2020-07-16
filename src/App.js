@@ -14,6 +14,7 @@ import Row from 'react-bootstrap/Row';
 import Spinner from 'react-bootstrap/Spinner'
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import ResponsiveEmbed from 'react-bootstrap/ResponsiveEmbed'
 
 // React Icons Components
 import { BsArrowLeft } from "react-icons/bs";
@@ -197,8 +198,10 @@ class App extends React.Component {
         <Container fluid >
         <div class="splash">
         <div className="text-center">
+        <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{height: 150, width: 300}}/>
+        
         <h3>Congratuations! You scored {this.score}/10!</h3>
-        <p>Enter your information below to claim your prize!</p>
+        <p>Great job! You have <span className="gold-text">UNLOCKED</span> the prize entry portal and are ready for life at the Beach. Please enter your information below. Many incoming students are still going through SOAR, so we will announce the prizes the week of August 17-21. Our team will contact you through the CSULB email you use below, so make sure it is accurate.”</p>
         </div>
           <Row>
             <Col>
@@ -221,15 +224,12 @@ class App extends React.Component {
                   <Form.Control required type="text" name="studentID" placeholder="Student ID" onChange={this.saveForm} />
                 </Form.Group>
                 <Button variant="primary" type="submit">Submit</Button>
+                {!this.state.uploadSuccess &&
                 <Alert variant="info" className="mt-3">
                   <Alert.Heading>Disclaimer</Alert.Heading>
-                  <p>
-                    Lorem ipsum dolor sit amet, per ut ipsum intellegat, ad eum quot nihil repudiandae.
-                    In homero repudiandae has, ut sit porro zril. An mel dolor reprimique assueverit,
-                    amet nostrum eu cum. Mei te laoreet appellantur. <strong>Winners will be notified and
-                    informed on August 20, the week before classes!</strong>
-                  </p>
+                  <p>All participants will win an item, though only some will win the higher-end prizes. This is an opportunity drawing and all high-end winners will be drawn at random. Participants will be notified of more details, if necessary, using the email address listed above. Only one entry per valid CSULB ID. Up-to only one prize will be awarded per valid CSULB ID. CSULB ASI reserves the right to forfeit the prize to another winner if acknowledgement is not received by the opportunity drawing winners within a timely manner, or as stated in direct communications with the winner.</p>
                 </Alert>
+                }
                 {this.state.uploadSuccess &&
                 <Alert variant="success">Your information was successfully uploaded!
                 <Alert.Link href="https://www.asicsulb.org"> Click here</Alert.Link> to navigate to ASI's home page
@@ -237,10 +237,16 @@ class App extends React.Component {
                 
                 }
               </Form>
-              
+                <hr/>
+                <div className="footer">
+                  <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 | (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
+                  <hr/>
+                  <p><a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
+                  <p><i>Copyright © 2020. Associated Students, Inc</i></p>
+               </div>
             </Col>
           </Row>
-          <iframe src="https://csulb.qualtrics.com/jfe/form/SV_6E8EAzBlCWPZISF" height="400px" width="100%"></iframe>
+          
           </div>
         </Container>
         </div>
@@ -256,7 +262,7 @@ class App extends React.Component {
                 <p>
                 But not to worry, you can try again! Take some time to review the resources available to you on the main page at <a href="http://soar2020.s3-website-us-west-1.amazonaws.com/">www.asicsulb.org/soar</a>. You're almost there!
                 </p>
-                <p>Once you pass, you will unlock the entry portal where you can enter to win many great prizes!</p>
+                <p>“UNLOCK the prize entry portal by testing out your knowledge and taking in some Beach facts. Get 7 out of 10 right and enter yourself to win one of many great prizes – which include Apple AirPods, Beach swag, apparel, Hydroflasks, and so much more!</p>
                 <hr />
                 <div className="d-flex justify-content-center">
                   <Button variant="danger" size="lg" onClick={this.resetQuiz}>Let's Try Again</Button>
@@ -274,7 +280,7 @@ class App extends React.Component {
         
         <Container fluid >
          <div className="splash">
-          <Row className="fullHeight d-flex align-items-center">
+          <Row>
             <Col>
                 
                   <div className="text-center">
@@ -283,13 +289,18 @@ class App extends React.Component {
                     <h2><strong>Introduction</strong></h2>
                     <p>Welcome to ASI at Long Beach State University! We are excited to have you as a part of the Beach community for the new 2020-2021 school year. Although things may look different for the coming semester due to the global pandemic, we want you to know that our ASI resources and services are still open and available to you. As part of your orientation, in order to learn more about the student body, LBSU and our history we have put together a fun and informative quiz for you to take. Test out your knowledge, take in some Beach facts, and who knows you may even win a prize in the process! </p>
                     <Button variant="primary" onClick={this.startQuiz}>PLAY THE GAME!</Button>
-                    <p>Before playing the game, take a moment to review the resources and rules below</p>
-                    <iframe width="90%" height="315" src="https://www.youtube.com/embed/6cftoxb0uOM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    <hr/>
+                    <p><strong>Before playing the game, take a moment to review the resources and rules below</strong></p>
+                    <div style={{ width: 'auto', height: 'auto' }}>
+                      <ResponsiveEmbed aspectRatio="16by9">
+                      <iframe src="https://www.youtube.com/embed/6cftoxb0uOM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                      </ResponsiveEmbed>
+                    </div>
                     <hr/>
                     <br/>
                     <Button href="https://soar-pdfs.s3-us-west-1.amazonaws.com/SM20_COMM_SOAR.pdf" variant="outline-primary" style={{marginRight: 15}} target="_blank">Review the ASI SOAR PPT</Button>
                     <Button href="https://www.asicsulb.org/corporate/resources/about-us" variant="outline-primary" target="_blank">Review ASI History</Button>
-                    <strong><p>Prizes and winners will be announced the week before classes (between Aug. 17-21)! Keep an eye out in your CSULB email inbox for updates as the date nears.</p></strong>
+                    <strong><p><span className="red-text">Prizes and winners will be announced the week before classes (between Aug. 17-21)!</span> Keep an eye out in your CSULB email inbox for updates as the date nears.</p></strong>
                     
                     <h2><strong>Game Rules</strong></h2>
                     </div>
@@ -355,29 +366,30 @@ class App extends React.Component {
                   <BsArrowLeft className="text-primary nav-arrows left" onClick={this.navLeft} />
                   <h3 style={{paddingLeft: 100, paddingRight: 100}}>{currentQuestions[current].text}</h3>            
                   <BsArrowRight className="text-primary nav-arrows right" onClick={this.navRight} />
-                  {isLastQuestion &&
-              <Row className="mt-4">
-                <Col>
-                  <Button variant='primary' size="lg" onClick={this.checkAnswers}>Check Your Answers</Button>
-                  <br/>
-                </Col>
-              </Row>
-              
-            }
+                  
                 </Jumbotron>
               </Col>
             </Row>
             
             <Row>
-              <Col class="px-5 mx-auto">
-                <ToggleButtonGroup size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion}>
+              <Col class="px-5 mx-auto my-o py-0">
+                <ToggleButtonGroup className="answerButtons" size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion}>
                   {currentQuestions[current].options.map(option => (
                     <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
                   ))}              
                 </ToggleButtonGroup>
               </Col>
             </Row>
-
+            
+            {isLastQuestion &&
+              <Row className="mt-4">
+                <Col>
+                  <Button variant='primary' size="lg" onClick={this.checkAnswers}>Get Your Score!</Button>
+                  <br/>
+                </Col>
+              </Row>
+              
+            }
             
           </Container>
         </div>

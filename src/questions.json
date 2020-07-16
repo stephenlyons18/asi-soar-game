@@ -97,22 +97,22 @@
     },
     {
         "id": 5,
-        "text": "The ASI Beach Pantry is on the ____________ floor of the University Student Union.",
+        "text": "The USU offers all the below services EXCEPT ____________.",
         "options": [
             {
-                "text": "First floor",
+                "text": "Beach Balance",
                 "value": "A"
             },
             {
-                "text": "Second floor",
+                "text": "Study Lounge",
                 "value": "B"
             },
             {
-                "text": "Third floor",
+                "text": "Fro-yo stop",
                 "value": "C"
             },
             {
-                "text": "Fifth floor",
+                "text": "Games Center",
                 "value": "D"
             }
         ],
@@ -136,7 +136,7 @@
                 "value": "C"
             },
             {
-                "text": "Indoor Sleeping Cots",
+                "text": "Dry Cleaning",
                 "value": "D"
             }
         ],
@@ -469,6 +469,102 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q5.jpg",
+        "correctAnswer": "D"
+    },
+    {
+        "id": 21,
+        "text": "What’s the main prize for Owen’s Condition for Tuition?",
+        "options": [
+            {
+                "text": "All expenses paid camping trip",
+                "value": "A"
+            },
+            {
+                "text": "Owen’s winner trophy",
+                "value": "B"
+            },
+            {
+                "text": "Free tuition for a semester",
+                "value": "C"
+            },
+            {
+                "text": "Newest Hydro flask",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q6.jpg",
+        "correctAnswer": "C"
+    },
+    {
+        "id": 22,
+        "text": "What is the name of the LBSU pyramid?",
+        "options": [
+            {
+                "text": "Walter Pyramid",
+                "value": "A"
+            },
+            {
+                "text": "Dirtbag Pyramid",
+                "value": "B"
+            },
+            {
+                "text": "Shark Fin",
+                "value": "C"
+            },
+            {
+                "text": "The Ocean Pointe",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q7.jpg",
+        "correctAnswer": "A"
+    },
+    {
+        "id": 23,
+        "text": "What is the name of the Performing Arts Center?",
+        "options": [
+            {
+                "text": "The Spielberg Center",
+                "value": "A"
+            },
+            {
+                "text": "The Carpenter Center",
+                "value": "B"
+            },
+            {
+                "text": "The Beach Center",
+                "value": "C"
+            },
+            {
+                "text": "The Acting Center",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q8.jpg",
+        "correctAnswer": "B"
+    },
+    {
+        "id": 24,
+        "text": "The Japanese Garden offers all the below EXCEPT ____________.",
+        "options": [
+            {
+                "text": "Tea House",
+                "value": "A"
+            },
+            {
+                "text": "Winding pathways",
+                "value": "B"
+            },
+            {
+                "text": "Zen Garden",
+                "value": "C"
+            },
+            {
+                "text": "Goat Yoga",
+                "value": "D"
+            }
+        ],
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q9.jpg",
         "correctAnswer": "D"
     }
 ]
