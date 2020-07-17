@@ -116,7 +116,7 @@
                 "value": "D"
             }
         ],
-        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q5.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q21.jpg",
         "correctAnswer": "C"
     },
     {
@@ -244,19 +244,19 @@
         "text": "LBSU is famous for being featured on this television station during this week.",
         "options": [
             {
-                "text": "Shark Week on Discovery Channel",
+                "text": "Discovery Channel - Shark Week",
                 "value": "A"
             },
             {
-                "text": "Summer Kickoff Week on Disney Channel",
+                "text": "Disney Channel - Summer Kickoff Week",
                 "value": "B"
             },
             {
-                "text": "Sea Animal Week on National Geographic",
+                "text": "National Geographic - Sea Animal Week",
                 "value": "C"
             },
             {
-                "text": "Ocean Week on Nick Jr.",
+                "text": "Nick Jr. - Ocean Week",
                 "value": "D"
             }
         ],
@@ -353,7 +353,7 @@
     },
     {
         "id": 16,
-        "text": "In what year was ASI formally incorporated established?",
+        "text": "In what year was ASI formally established?",
         "options": [
             {
                 "text": "1949",
@@ -444,7 +444,7 @@
                 "value": "D"
             }
         ],
-        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q4.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q3.jpg",
         "correctAnswer": "A"
     },
     {
@@ -492,7 +492,7 @@
                 "value": "D"
             }
         ],
-        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q6.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q22.jpg",
         "correctAnswer": "C"
     },
     {
@@ -516,7 +516,7 @@
                 "value": "D"
             }
         ],
-        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q7.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q23.jpg",
         "correctAnswer": "A"
     },
     {
@@ -540,7 +540,7 @@
                 "value": "D"
             }
         ],
-        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q8.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q24.jpg",
         "correctAnswer": "B"
     },
     {
@@ -564,7 +564,7 @@
                 "value": "D"
             }
         ],
-        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q9.jpg",
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q25.jpg",
         "correctAnswer": "D"
     }
 ]
