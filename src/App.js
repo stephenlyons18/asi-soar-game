@@ -242,12 +242,12 @@ class App extends React.Component {
                 <ResponsiveEmbed>
                    <iframe src="https://csulb.qualtrics.com/jfe/form/SV_6E8EAzBlCWPZISF" aspectRatio="16by9"></iframe>
                 </ResponsiveEmbed>
-                <h4>Click<a href="https://www.asicsulb.org/corporate/"> here</a> to navigate to ASI's home page</h4>
+                <h4>Click<a href="https://www.asicsulb.org/corporate/" target="_blank"> here</a> to navigate to ASI's home page</h4>
                 <hr/>
                 <div className="footer">
                   <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
                   <hr/>
-                  <p><a href="https://www.asicsulb.org/corporate/">ASI | </a><a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
+                  <p><a href="https://www.asicsulb.org/corporate/" target="_blank">ASI | </a><a href="https://www.asicsulb.org/gov/" target="_blank">Student Government</a> | <a href="https://www.asirecreation.org/" target="_blank">SRWC</a> | <a href="https://www.22westmedia.com/" target="_blank">22 West Media</a> | <a href="https://www.csulb.edu/" target="_blank">CSULB</a></p>
                   <p><i>Copyright © 2020. Associated Students, Inc</i></p>
                </div>
 
@@ -339,7 +339,7 @@ class App extends React.Component {
                   <div className="footer">
                     <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 <br/> (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
                     <hr/>
-                    <p><a href="https://www.asicsulb.org/corporate/">ASI</a> | <a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
+                    <p><a href="https://www.asicsulb.org/corporate/" target="_blank">ASI</a> | <a href="https://www.asicsulb.org/gov/" target="_blank">Student Government</a> | <a href="https://www.asirecreation.org/" target="_blank">SRWC</a> | <a href="https://www.22westmedia.com/" target="_blank">22 West Media</a> | <a href="https://www.csulb.edu/" target="_blank">CSULB</a></p>
                     <p><i>Copyright © 2020. Associated Students, Inc</i></p>
                  </div>
             </Col>
