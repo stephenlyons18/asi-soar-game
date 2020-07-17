@@ -192,6 +192,8 @@ class App extends React.Component {
         </Container>
       );
     } else if (this.state.hasPassed) {
+
+
       return (
         <div className="background2">
           
@@ -201,11 +203,11 @@ class App extends React.Component {
         <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{height: 150, width: 300}}/>
         
         <h3>Congratuations! You scored {this.score}/10!</h3>
-        <p>Great job! You have <span className="gold-text">UNLOCKED</span> the prize entry portal and are ready for life at the Beach. Please enter your information below. Many incoming students are still going through SOAR, so we will announce the prizes the week of August 17-21. Our team will contact you through the CSULB email you use below, so make sure it is accurate.”</p>
+        <p>Great job! You have <span className="gold-text">UNLOCKED</span> the prize entry portal and are ready for life at the Beach. Please enter your information below. Many incoming students are still going through SOAR, so we will announce the prizes the week of August 17-21. Our team will contact you through the CSULB email you use below, so make sure it is accurate.</p>
         </div>
           <Row>
             <Col>
-              <Form onSubmit={this.submit}>
+              {/* <Form onSubmit={this.submit}>
                 <Form.Group controlId="firstName">
                   <Form.Label>First Name</Form.Label>
                   <Form.Control required type="text" placeholder="John" name="firstName" onChange={this.saveForm} />
@@ -236,14 +238,20 @@ class App extends React.Component {
                 </Alert>
                 
                 }
-              </Form>
+              </Form> */}
+                <ResponsiveEmbed>
+                   <iframe src="https://csulb.qualtrics.com/jfe/form/SV_6E8EAzBlCWPZISF" aspectRatio="16by9"></iframe>
+                </ResponsiveEmbed>
+                <h4>Click<a href="https://www.asicsulb.org/corporate/"> here</a> to navigate to ASI's home page</h4>
                 <hr/>
                 <div className="footer">
-                  <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 <br/> (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
+                  <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
                   <hr/>
-                  <p><a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
+                  <p><a href="https://www.asicsulb.org/corporate/">ASI | </a><a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
                   <p><i>Copyright © 2020. Associated Students, Inc</i></p>
                </div>
+
+               
             </Col>
           </Row>
           
@@ -252,6 +260,13 @@ class App extends React.Component {
         </div>
       );      
     } else if (this.state.hasFailed) {
+      if (Window.width > 360){
+        return(
+          <Alert variant="danger">Please rotate your device for a better mobile experience</Alert>
+        )
+      }
+
+      else{
       return (
         <div className="background-failed">
         <Container fluid>
@@ -262,7 +277,7 @@ class App extends React.Component {
                 <p>
                 But not to worry, you can try again! Take some time to review the resources available to you on the main page at <a href="http://soar2020.s3-website-us-west-1.amazonaws.com/">www.asicsulb.org/soar</a>. You're almost there!
                 </p>
-                <p>“UNLOCK the prize entry portal by testing out your knowledge and taking in some Beach facts. Get 7 out of 10 right and enter yourself to win one of many great prizes – which include Apple AirPods, Beach swag, apparel, Hydroflasks, and so much more!</p>
+                <p>UNLOCK the prize entry portal by testing out your knowledge and taking in some Beach facts. Get 7 out of 10 right and enter yourself to win one of many great prizes – which include Apple AirPods, Beach swag, apparel, Hydroflasks, and so much more!</p>
                 <hr />
                 <div className="d-flex justify-content-center">
                   <Button variant="danger" size="lg" onClick={this.resetQuiz}>Let's Try Again</Button>
@@ -273,6 +288,7 @@ class App extends React.Component {
         </Container>
         </div>
       );
+      }
     }
     else if (!this.state.rules){
       return(
@@ -323,7 +339,7 @@ class App extends React.Component {
                   <div className="footer">
                     <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 <br/> (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
                     <hr/>
-                    <p><a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
+                    <p><a href="https://www.asicsulb.org/corporate/">ASI</a> | <a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
                     <p><i>Copyright © 2020. Associated Students, Inc</i></p>
                  </div>
             </Col>
