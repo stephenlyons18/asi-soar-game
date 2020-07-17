@@ -242,7 +242,9 @@ class App extends React.Component {
                 <ResponsiveEmbed>
                    <iframe src="https://csulb.qualtrics.com/jfe/form/SV_6E8EAzBlCWPZISF" aspectRatio="16by9"></iframe>
                 </ResponsiveEmbed>
-                <h4>Click<a href="https://www.asicsulb.org/corporate/" target="_blank"> here</a> to navigate to ASI's home page</h4>
+                <div className="text-center">
+                  <h4>Click<a href="https://www.asicsulb.org/corporate/" target="_blank"> here</a> to navigate to ASI's home page</h4>
+                </div>
                 <hr/>
                 <div className="footer">
                   <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
@@ -366,7 +368,6 @@ class App extends React.Component {
       return (
         <div className="App">
           <Container fluid>
-          
             <Image src={currentQuestions[current].imageSrc} fluid />
                 
             <Row>
@@ -388,7 +389,7 @@ class App extends React.Component {
             </Row>
             
             <Row>
-              <Col class="px-5 mx-auto my-o py-0">
+              <Col>
                 <ToggleButtonGroup className="answerButtons" size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion}>
                   {currentQuestions[current].options.map(option => (
                     <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
@@ -406,7 +407,6 @@ class App extends React.Component {
               </Row>
               
             }
-            
           </Container>
         </div>
       );

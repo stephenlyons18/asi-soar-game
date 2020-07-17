@@ -135,10 +135,8 @@
 }
 @media(max-width: 768px){
   .splash{
-    
     border-radius: 15px;
     opacity: .95;
-
     margin-left: 2%;
     margin-right:2%;
     padding-left: 2%;
@@ -161,5 +159,8 @@
   margin-top: 24px;
   margin-left: 0%;
   margin-right: 0%;
+  }
+  .answerButtons{
+    width: 90%
   }
 }
