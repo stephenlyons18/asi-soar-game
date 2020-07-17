@@ -239,7 +239,7 @@ class App extends React.Component {
               </Form>
                 <hr/>
                 <div className="footer">
-                  <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 | (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
+                  <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 <br/> (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
                   <hr/>
                   <p><a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
                   <p><i>Copyright © 2020. Associated Students, Inc</i></p>
@@ -321,7 +321,7 @@ class App extends React.Component {
 
                   <hr/>
                   <div className="footer">
-                    <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 | (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
+                    <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 <br/> (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
                     <hr/>
                     <p><a href="https://www.asicsulb.org/gov/">Student Government</a> | <a href="https://www.asirecreation.org/">SRWC</a> | <a href="https://www.22westmedia.com/">22 West Media</a> | <a href="https://www.csulb.edu/">CSULB</a></p>
                     <p><i>Copyright © 2020. Associated Students, Inc</i></p>
