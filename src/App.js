@@ -198,7 +198,7 @@ class App extends React.Component {
         <div className="background2">
           
         <Container fluid >
-        <div class="splash">
+        <div className="splash">
         <div className="text-center">
         <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{height: 150, width: 300}}/>
         
@@ -311,7 +311,7 @@ class App extends React.Component {
                     <p><strong>Before playing the game, take a moment to review the resources and rules below</strong></p>
                     <div style={{ width: 'auto', height: 'auto' }}>
                       <ResponsiveEmbed aspectRatio="16by9">
-                      <iframe src="https://www.youtube.com/embed/6cftoxb0uOM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                      <iframe src="https://www.youtube.com/embed/6cftoxb0uOM" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> 
                       </ResponsiveEmbed>
                     </div>
                     <hr/>
@@ -333,7 +333,7 @@ class App extends React.Component {
                     <li>Have fun & learn new things! </li>
                     
                   </ol>
-                  <div class="text-center">
+                  <div className="text-center">
                    <Button variant="primary" onClick={this.startQuiz} >PLAY THE GAME!</Button>
                   </div>
 
@@ -363,17 +363,18 @@ class App extends React.Component {
       const currentQuestions = this.state.currentQuestions;
       const current = this.state.current;
       const answers = this.state.answers;
+      console.log(currentQuestions[current].altText)
       
 
       return (
         <div className="App">
           <Container fluid>
-            <Image src={currentQuestions[current].imageSrc} fluid />
+            <Image src={currentQuestions[current].imageSrc} alt={currentQuestions[current].altText} fluid />
                 
             <Row>
               <Col>
                 <ProgressBar now={progress} label={`${progress}%`} />
-                <Jumbotron class="jumbo" fluid>
+                <Jumbotron className="jumbo" fluid>
                   {/* {isFirstQuestion &&
                   <p class="pull-right"><i>Click the arrow for<br/> next question</i></p>
                   }

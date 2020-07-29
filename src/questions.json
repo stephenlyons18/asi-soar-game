@@ -21,7 +21,9 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q1.jpg",
-        "correctAnswer": "C"
+        "correctAnswer": "C",
+        "altText": "Image of the staircase next to the USU with the ASI bush"
+        
     },
     {
         "id": 2,
@@ -45,7 +47,9 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q2.jpg",
-        "correctAnswer": "C"
+        "correctAnswer": "C",
+        "altText": "Picture of front of the school with bus and Go Beach sign"
+
     },
     {
         "id": 3,
@@ -69,7 +73,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q3.jpg",
-        "correctAnswer": "A"
+        "correctAnswer": "A",
+        "altText": "Picture of the three ASI executives all wearing masks"
     },
     {
         "id": 4,
@@ -93,7 +98,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q4.jpg",
-        "correctAnswer": "B"
+        "correctAnswer": "B",
+        "altText": "Walter Pyramid in the background of the picture with Brotman Hall and Go Beach sign in foreground"
     },
     {
         "id": 5,
@@ -117,7 +123,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q21.jpg",
-        "correctAnswer": "C"
+        "correctAnswer": "C",
+        "altText": "Empty University Student Union Courtyard"
     },
     {
         "id": 6,
@@ -141,7 +148,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q6.jpg",
-        "correctAnswer": "D"
+        "correctAnswer": "D",
+        "altText": "Students hanging out next to the pool at the Student Recreation and Wellness Center"
     },
     {
         "id": 7,
@@ -165,7 +173,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q7.jpg",
-        "correctAnswer": "A"
+        "correctAnswer": "A",
+        "altText": "Students all listening to some music at a DJ event put on by Beach Pride Events"
     },
     {
         "id": 8,
@@ -189,7 +198,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q8.jpg",
-        "correctAnswer": "D"
+        "correctAnswer": "D",
+        "altText": "A picture of various paints and other artistic materials"
     },
     {
         "id": 9,
@@ -213,7 +223,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q9.jpg",
-        "correctAnswer": "C"
+        "correctAnswer": "C",
+        "altText": "Picture of students at Schmorgasport, which is an event put on by ASI"
     },
     {
         "id": 10,
@@ -237,7 +248,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q10.jpg",
-        "correctAnswer": "B"
+        "correctAnswer": "B",
+        "altText": "Picture of Week of Welcome, and the various clubs and students that attend"
     },
     {
         "id": 11,
@@ -261,7 +273,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q11.jpg",
-        "correctAnswer": "A"
+        "correctAnswer": "A",
+        "altText": "Picture of the indoor track and fitness machines at the Student Recreation and Wellness Center"
     },
     {
         "id": 12,
@@ -285,7 +298,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q12.jpg",
-        "correctAnswer": "C"
+        "correctAnswer": "C",
+        "altText": "A picture of students walking near the USU on campus"
     },
     {
         "id": 13,
@@ -309,7 +323,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q13.jpg",
-        "correctAnswer": "C"
+        "correctAnswer": "C",
+        "altText": "A picture of students sitting inside of the University Student Union"
     },
     {
         "id": 14,
@@ -333,7 +348,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q14.jpg",
-        "correctAnswer": "B"
+        "correctAnswer": "B",
+        "altText": "TV screens with desks"
     },
     {
         "id": 15,
@@ -349,7 +365,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q15.jpg",
-        "correctAnswer": "A"
+        "correctAnswer": "A",
+        "altText": "Students working out in the Student Recreation and Wellness Center"
     },
     {
         "id": 16,
@@ -373,7 +390,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q1.jpg",
-        "correctAnswer": "D"
+        "correctAnswer": "D",
+        "altText": "Image of the staircase next to the USU with the ASI bush"
     },
     {
         "id": 17,
@@ -397,7 +415,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q2.jpg",
-        "correctAnswer": "C"
+        "correctAnswer": "C",
+        "altText": "Picture of front of the school with bus and Go Beach sign"
     },
     {
         "id": 18,
@@ -421,7 +440,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q3.jpg",
-        "correctAnswer": "C"
+        "correctAnswer": "C",
+        "altText": "Picture of the three ASI executives all wearing masks"
     },
     {
         "id": 19,
@@ -444,8 +464,9 @@
                 "value": "D"
             }
         ],
-        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q3.jpg",
-        "correctAnswer": "A"
+        "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q4.jpg",
+        "correctAnswer": "A",
+        "altText": "Walter Pyramid in the background of the picture with Brotman Hall and Go Beach sign in foreground"
     },
     {
         "id": 20,
@@ -493,7 +514,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q22.jpg",
-        "correctAnswer": "C"
+        "correctAnswer": "C",
+        "altText": "Students sitting in hammocks for ASI's Project Chill"
     },
     {
         "id": 22,
@@ -517,7 +539,8 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q23.jpg",
-        "correctAnswer": "A"
+        "correctAnswer": "A",
+        "altText": "A picture of the LBSU Pyramid"
     },
     {
         "id": 23,
@@ -541,7 +564,9 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q24.jpg",
-        "correctAnswer": "B"
+        "correctAnswer": "B",
+        "altText": "An image of the LBSU Performing Arts Center from the front"
+
     },
     {
         "id": 24,
@@ -565,6 +590,7 @@
             }
         ],
         "imageSrc": "https://soar-images.s3-us-west-1.amazonaws.com/Soar+Q25.jpg",
-        "correctAnswer": "D"
+        "correctAnswer": "D",
+        "altText": "An image of the pond at the LBSU's Japanese Garden"
     }
 ]
