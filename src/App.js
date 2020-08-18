@@ -318,7 +318,7 @@ class App extends React.Component {
                     <br/>
                     <Button href="https://soar-pdfs.s3-us-west-1.amazonaws.com/SM20_COMM_SOAR.pdf" variant="outline-primary" style={{marginRight: 15}} target="_blank">Review the ASI SOAR PPT</Button>
                     <Button href="https://www.asicsulb.org/corporate/resources/about-us" variant="outline-primary" target="_blank">Review ASI History</Button>
-                    <strong><p><span className="red-text">Prizes and winners will be announced the week before classes (between Aug. 17-21)!</span> Keep an eye out in your CSULB email inbox for updates as the date nears.</p></strong>
+                    <strong><p><span className="red-text">Prizes and winners will be announced the week of August 31st!</span> Keep an eye out in your CSULB email inbox for updates as the date nears.</p></strong>
                     
                     <h2><strong>Game Rules</strong></h2>
                     </div>
