@@ -6,7 +6,6 @@ import Alert from 'react-bootstrap/Alert'
 import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import ProgressBar from 'react-bootstrap/ProgressBar'
@@ -112,8 +111,8 @@ class App extends React.Component {
 
   shuffleQuestions = (array) => {
     for (var i = array.length - 1; i > 0; i--) {
-        var rand = Math.floor(Math.random() * (i + 1));
-        [array[i], array[rand]] = [array[rand], array[i]]
+      var rand = Math.floor(Math.random() * (i + 1));
+      [array[i], array[rand]] = [array[rand], array[i]]
     }
   }
 
@@ -162,17 +161,17 @@ class App extends React.Component {
       },
       body: JSON.stringify(data)
     })
-    .then(res => res.json())
-    .then(result => {
-      console.log(result);
-    }, error => {
-      console.log(error);
-    });
+      .then(res => res.json())
+      .then(result => {
+        console.log(result);
+      }, error => {
+        console.log(error);
+      });
     this.setState({
       uploadSuccess: true
     });
-   
-    
+
+
   }
 
   render() {
@@ -196,132 +195,100 @@ class App extends React.Component {
 
       return (
         <div className="background2">
-          
-        <Container fluid >
-        <div className="splash">
-        <div className="text-center">
-        <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{height: 150, width: 300}}/>
-        
-        <h3>Congratuations! You scored {this.score}/10!</h3>
-        <p>Great job! You have <span className="gold-text">UNLOCKED</span> the prize entry portal and are ready for life at the Beach. Please enter your information below. Many incoming students are still going through SOAR, so we will announce the prizes the week of August 31st. Our team will contact you through the CSULB email you use below, so make sure it is accurate.</p>
-        </div>
-          <Row>
-            <Col>
-              {/* <Form onSubmit={this.submit}>
-                <Form.Group controlId="firstName">
-                  <Form.Label>First Name</Form.Label>
-                  <Form.Control required type="text" placeholder="John" name="firstName" onChange={this.saveForm} />
-                </Form.Group>
-                <Form.Group controlId="lastName">
-                  <Form.Label>Last Name</Form.Label>
-                  <Form.Control required type="text" name="lastName" placeholder="Doe" onChange={this.saveForm} />
-                </Form.Group>
-                <Form.Group controlId="email">
-                  <Form.Label>Student Email Address</Form.Label>
-                  <Form.Control required type="email" name="email" placeholder="name@student.csulb.edu" onChange={this.saveForm}/>
-                  <Form.Text className="text-muted">Please use your CSULB email address</Form.Text>
-                </Form.Group>
-                <Form.Group controlId='studentID'>
-                  <Form.Label>Student ID</Form.Label>
-                  <Form.Control required type="text" name="studentID" placeholder="Student ID" onChange={this.saveForm} />
-                </Form.Group>
-                <Button variant="primary" type="submit">Submit</Button>
-                {!this.state.uploadSuccess &&
-                <Alert variant="info" className="mt-3">
-                  <Alert.Heading>Disclaimer</Alert.Heading>
-                  <p>All participants will win an item, though only some will win the higher-end prizes. This is an opportunity drawing and all high-end winners will be drawn at random. Participants will be notified of more details, if necessary, using the email address listed above. Only one entry per valid CSULB ID. Up-to only one prize will be awarded per valid CSULB ID. CSULB ASI reserves the right to forfeit the prize to another winner if acknowledgement is not received by the opportunity drawing winners within a timely manner, or as stated in direct communications with the winner.</p>
-                </Alert>
-                }
-                {this.state.uploadSuccess &&
-                <Alert variant="success">Your information was successfully uploaded!
-                <Alert.Link href="https://www.asicsulb.org"> Click here</Alert.Link> to navigate to ASI's home page
-                </Alert>
-                
-                }
-              </Form> */}
-                <ResponsiveEmbed>
-                   <iframe src="https://csulb.qualtrics.com/jfe/form/SV_6E8EAzBlCWPZISF" aspectRatio="16by9"></iframe>
-                </ResponsiveEmbed>
-                <div className="text-center">
-                  <h4>Click<a href="https://www.asicsulb.org/corporate/" target="_blank"> here</a> to navigate to ASI's home page</h4>
-                </div>
-                <hr/>
-                <div className="footer">
-                  <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
-                  <hr/>
-                  <p><a href="https://www.asicsulb.org/corporate/" target="_blank">ASI | </a><a href="https://www.asicsulb.org/gov/" target="_blank">Student Government</a> | <a href="https://www.asirecreation.org/" target="_blank">SRWC</a> | <a href="https://www.22westmedia.com/" target="_blank">22 West Media</a> | <a href="https://www.csulb.edu/" target="_blank">CSULB</a></p>
-                  <p><i>Copyright © 2020. Associated Students, Inc</i></p>
-               </div>
 
-               
-            </Col>
-          </Row>
-          
-          </div>
-        </Container>
+          <Container fluid >
+            <div className="splash">
+              <div className="text-center">
+                <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{ height: 150, width: 300 }} />
+
+                <h3>Congratuations! You scored {this.score}/10!</h3>
+                <p>Great job! You have <span className="gold-text">UNLOCKED</span> the prize entry portal and are ready for life at the Beach. Please enter your information below. Many incoming students are still going through SOAR, so we will announce the prizes the week of August 31st. Our team will contact you through the CSULB email you use below, so make sure it is accurate.</p>
+              </div>
+              <Row>
+                <Col>
+                  <ResponsiveEmbed>
+                    <iframe src="https://csulb.qualtrics.com/jfe/form/SV_6E8EAzBlCWPZISF" aspectRatio="16by9"></iframe>
+                  </ResponsiveEmbed>
+                  <div className="text-center">
+                    <h4>Click<a href="https://www.asicsulb.org/corporate/" target="_blank"> here</a> to navigate to ASI's home page</h4>
+                  </div>
+                  <hr />
+                  <div className="footer">
+                    <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
+                    <hr />
+                    <p><a href="https://www.asicsulb.org/corporate/" target="_blank">ASI | </a><a href="https://www.asicsulb.org/gov/" target="_blank">Student Government</a> | <a href="https://www.asirecreation.org/" target="_blank">SRWC</a> | <a href="https://www.22westmedia.com/" target="_blank">22 West Media</a> | <a href="https://www.csulb.edu/" target="_blank">CSULB</a></p>
+                    <p><i>Copyright © 2020. Associated Students, Inc</i></p>
+                  </div>
+
+
+                </Col>
+              </Row>
+
+            </div>
+          </Container>
         </div>
-      );      
+      );
     } else if (this.state.hasFailed) {
-      if (Window.width > 360){
-        return(
+      if (Window.width > 360) {
+        return (
           <Alert variant="danger">Please rotate your device for a better mobile experience</Alert>
         )
       }
 
-      else{
-      return (
-        <div className="background-failed">
-        <Container fluid>
-          <Row>
-            <Col className="fullHeight d-flex align-items-center">
-              <Alert variant="danger" className="mx-auto p-4 noticeAlert">
-              <Alert.Heading className="text-center">Shoot, you didn't pass. You got a {this.score}/10</Alert.Heading>
-                <p>
-                But not to worry, you can try again! Take some time to review the resources available to you on the main page at <a href="http://soar2020.s3-website-us-west-1.amazonaws.com/">www.asicsulb.org/soar</a>. You're almost there!
+      else {
+        return (
+          <div className="background-failed">
+            <Container fluid>
+              <Row>
+                <Col className="fullHeight d-flex align-items-center">
+                  <Alert variant="danger" className="mx-auto p-4 noticeAlert">
+                    <Alert.Heading className="text-center">Shoot, you didn't pass. You got a {this.score}/10</Alert.Heading>
+                    <p>
+                      But not to worry, you can try again! Take some time to review the resources available to you on the main page at <a href="http://soar2020.s3-website-us-west-1.amazonaws.com/">www.asicsulb.org/soar</a>. You're almost there!
                 </p>
-                <p>UNLOCK the prize entry portal by testing out your knowledge and taking in some Beach facts. Get 7 out of 10 right and enter yourself to win one of many great prizes – which include Apple AirPods, Beach swag, apparel, Hydroflasks, and so much more!</p>
-                <hr />
-                <div className="d-flex justify-content-center">
-                  <Button variant="danger" size="lg" onClick={this.resetQuiz}>Let's Try Again</Button>
-                </div>
-              </Alert>
-            </Col>
-          </Row>
-        </Container>
-        </div>
-      );
+                    <p>UNLOCK the prize entry portal by testing out your knowledge and taking in some Beach facts. Get 7 out of 10 right and enter yourself to win one of many great prizes – which include Apple AirPods, Beach swag, apparel, Hydroflasks, and so much more!</p>
+                    <hr />
+                    <div className="d-flex justify-content-center">
+                      <Button variant="danger" size="lg" onClick={this.resetQuiz}>Let's Try Again</Button>
+                    </div>
+                  </Alert>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        );
       }
     }
-    else if (!this.state.rules){
-      return(
+    else if (!this.state.rules) {
+      return (
         <div className="rules-background">
-        
-        <Container fluid >
-         <div className="splash">
-          <Row>
-            <Col>
-                
+
+          <Container fluid >
+            <div className="splash">
+              <Row>
+                <Col>
+
                   <div className="text-center">
                     <h1 className="sr-only"><strong><u>Introduction and Rules</u></strong></h1>
-                    <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{height: 150, width: 300}}/>
+                    <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{ height: 150, width: 300 }} />
                     <h2><strong>Introduction</strong></h2>
                     <p>Welcome to ASI at Long Beach State University! We are excited to have you as a part of the Beach community for the new 2020-2021 school year. Although things may look different for the coming semester due to the global pandemic, we want you to know that our ASI resources and services are still open and available to you. As part of your orientation, in order to learn more about the student body, LBSU and our history we have put together a fun and informative quiz for you to take. Test out your knowledge, take in some Beach facts, and who knows you may even win a prize in the process! </p>
                     <Button variant="primary" onClick={this.startQuiz}>PLAY THE GAME!</Button>
-                    <hr/>
+                    <hr />
                     <p><strong>Before playing the game, take a moment to review the resources and rules below</strong></p>
                     <div style={{ width: 'auto', height: 'auto' }}>
                       <ResponsiveEmbed aspectRatio="16by9">
-                      <iframe src="https://www.youtube.com/embed/6cftoxb0uOM" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe> 
+                        <iframe src="https://www.youtube.com/embed/6cftoxb0uOM" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                       </ResponsiveEmbed>
                     </div>
-                    <hr/>
-                    <br/>
-                    <Button href="https://soar-pdfs.s3-us-west-1.amazonaws.com/SM20_COMM_SOAR.pdf" variant="outline-primary" style={{marginRight: 15}} target="_blank">Review the ASI SOAR PPT</Button>
+                    <hr />
+                    <br />
+                    <Button href="https://soar-pdfs.s3-us-west-1.amazonaws.com/SM20_COMM_SOAR.pdf" variant="outline-primary" style={{ marginRight: 15 }} target="_blank">Review the ASI SOAR PPT</Button>
                     <Button href="https://www.asicsulb.org/corporate/resources/about-us" variant="outline-primary" target="_blank">Review ASI History</Button>
                     <strong><p><span className="red-text">Prizes and winners will be announced the week of August 31st!</span> Keep an eye out in your CSULB email inbox for updates as the date nears.</p></strong>
-                    
+
                     <h2><strong>Game Rules</strong></h2>
-                    </div>
+                  </div>
                   <ol>
                     <li>Only newly entering students (transfer/first year) may enter </li>
                     <li>Must enter a valid CSULB ID number and email address to enter </li>
@@ -331,30 +298,30 @@ class App extends React.Component {
                     <li>Once you do pass, feel free to take the quiz again, but you can only enter one time per student ID</li>
                     <li>One (1) prize maximum per student entry</li>
                     <li>Have fun & learn new things! </li>
-                    
+
                   </ol>
                   <div className="text-center">
-                   <Button variant="primary" onClick={this.startQuiz} >PLAY THE GAME!</Button>
+                    <Button variant="primary" onClick={this.startQuiz} >PLAY THE GAME!</Button>
                   </div>
 
-                  <hr/>
+                  <hr />
                   <div className="footer">
-                    <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 <br/> (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
-                    <hr/>
+                    <p>1212 Bellflower Blvd., USU-229, Long Beach, California 90815 <br /> (562) 985-4834 |<a href="mailto:asi-studentunion@csulb.edu"> asi-studentunion@csulb.edu</a></p>
+                    <hr />
                     <p><a href="https://www.asicsulb.org/corporate/" target="_blank">ASI</a> | <a href="https://www.asicsulb.org/gov/" target="_blank">Student Government</a> | <a href="https://www.asirecreation.org/" target="_blank">SRWC</a> | <a href="https://www.22westmedia.com/" target="_blank">22 West Media</a> | <a href="https://www.csulb.edu/" target="_blank">CSULB</a></p>
                     <p><i>Copyright © 2020. Associated Students, Inc</i></p>
-                 </div>
-            </Col>
-          </Row>
-          </div>
-          
-        </Container>
-        
+                  </div>
+                </Col>
+              </Row>
+            </div>
+
+          </Container>
+
         </div>
       );
 
     }
-    else if (this.state.rules){
+    else if (this.state.rules) {
       // Quick accessors
       const progress = (this.state.current + 1) * 10;
       const isLastQuestion = this.state.current === this.state.currentQuestions.length - 1;
@@ -364,13 +331,13 @@ class App extends React.Component {
       const current = this.state.current;
       const answers = this.state.answers;
       console.log(currentQuestions[current].altText)
-      
+
 
       return (
         <div className="App">
           <Container fluid>
             <Image src={currentQuestions[current].imageSrc} alt={currentQuestions[current].altText} fluid />
-                
+
             <Row>
               <Col>
                 <ProgressBar now={progress} label={`${progress}%`} />
@@ -382,37 +349,36 @@ class App extends React.Component {
                   <p class="pull-left"><i>Click the arrow for<br/> previous question</i></p>
                   } */}
                   <BsArrowLeft className="text-primary nav-arrows left" onClick={this.navLeft} />
-                  <h3 style={{paddingLeft: 100, paddingRight: 100}}>{currentQuestions[current].text}</h3>            
+                  <h3 style={{ paddingLeft: 100, paddingRight: 100 }}>{currentQuestions[current].text}</h3>
                   <BsArrowRight className="text-primary nav-arrows right" onClick={this.navRight} />
-                  
+
                 </Jumbotron>
               </Col>
             </Row>
-            
+
             <Row>
               <Col>
-                <ToggleButtonGroup className="answerButtons" size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion}>
+                <ToggleButtonGroup className="answerButtons" size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion} vertical={this.innerWidth < 760}>
                   {currentQuestions[current].options.map(option => (
                     <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
-                  ))}              
+                  ))}
                 </ToggleButtonGroup>
               </Col>
             </Row>
-            
+
             {isLastQuestion &&
               <Row className="mt-4">
                 <Col>
                   <Button variant='primary' size="lg" onClick={this.checkAnswers}>Get Your Score!</Button>
-                  <br/>
+                  <br />
                 </Col>
               </Row>
-              
             }
           </Container>
         </div>
       );
     }
-    
+
   }
 }
 export default App;
