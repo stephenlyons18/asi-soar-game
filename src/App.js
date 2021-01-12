@@ -202,7 +202,7 @@ class App extends React.Component {
                 <Image src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg" fluid style={{ height: 150, width: 300 }} />
 
                 <h3>Congratuations! You scored {this.score}/10!</h3>
-                <p>Great job! You have <span className="gold-text">UNLOCKED</span> the prize entry portal and are ready for life at the Beach. Please enter your information below. Many incoming students are still going through SOAR, so we will announce the prizes the week of August 31st. Our team will contact you through the CSULB email you use below, so make sure it is accurate.</p>
+                <p>Great job! You have <span className="gold-text">UNLOCKED</span> the prize entry portal and are ready for life at the Beach. Please enter your information below. Many incoming students are still going through SOAR, so we will announce the prizes the week of Feb. 8th. Our team will contact you through the CSULB email you use below, so make sure it is accurate.</p>
               </div>
               <Row>
                 <Col>
