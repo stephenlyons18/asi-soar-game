@@ -45,7 +45,6 @@ class App extends React.Component {
       .then(res => res.json())
       .then(result => {
         this.allQuestions = result;
-        this.initDevice();
         this.initQuestions();
       }, error => {
         this.setState({
@@ -78,12 +77,6 @@ class App extends React.Component {
       isLoaded: true
     });
     
-  }
-
-  initDevice = () => {
-    if (window.innerWidth < 780){
-      this.mobile = true;
-    }
   }
 
   saveQuestion = (val) => {
@@ -367,7 +360,7 @@ class App extends React.Component {
 
             <Row>
               <Col>
-                <ToggleButtonGroup className="answerButtons" size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion} vertical={this.mobile}>
+                <ToggleButtonGroup className="answerButtons" size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion} vertical={window.innerWidth < 780}>
                   {currentQuestions[current].options.map(option => (
                     <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
                   ))}
