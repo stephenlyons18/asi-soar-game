@@ -36,6 +36,7 @@ class App extends React.Component {
     this.allQuestions = [];
     this.userForm = {};
     this.score = 0;
+    this.mobile = false;
   }
 
   componentDidMount() {
@@ -44,6 +45,7 @@ class App extends React.Component {
       .then(res => res.json())
       .then(result => {
         this.allQuestions = result;
+        this.initDevice();
         this.initQuestions();
       }, error => {
         this.setState({
@@ -75,6 +77,13 @@ class App extends React.Component {
       currentQuestions: this.allQuestions.slice(0, 10),
       isLoaded: true
     });
+    
+  }
+
+  initDevice = () => {
+    if (window.innerWidth < 780){
+      this.mobile = true;
+    }
   }
 
   saveQuestion = (val) => {
@@ -358,7 +367,7 @@ class App extends React.Component {
 
             <Row>
               <Col>
-                <ToggleButtonGroup className="answerButtons" size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion} vertical={this.innerWidth < 760}>
+                <ToggleButtonGroup className="answerButtons" size="lg" name={"question-" + current} value={answers[current] || null} onChange={this.saveQuestion} vertical={this.mobile}>
                   {currentQuestions[current].options.map(option => (
                     <ToggleButton key={option.value} value={option.value} variant="outline-primary">{option.text}</ToggleButton>
                   ))}
