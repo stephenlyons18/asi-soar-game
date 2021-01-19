@@ -328,7 +328,6 @@ class App extends React.Component {
       const progress = (this.state.current + 1) * 10;
       const isLastQuestion = this.state.current === this.state.currentQuestions.length - 1;
       const isFirstQuestion = this.state.current === this.state.currentQuestions.length - 10;
-      const isSecondQuestion = this.state.current === this.state.currentQuestions.length - 9;
       const currentQuestions = this.state.currentQuestions;
       const current = this.state.current;
       const answers = this.state.answers;
