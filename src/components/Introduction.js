@@ -23,35 +23,32 @@ const Introduction = () => {
                                     rounded
                                     className="mb-2"
                                 />
-                                <Jumbotron>
-                                    <h1 className="sr-only">
-                                        Introduction and Rules
-                                    </h1>
-                                    <p className="my-2">
-                                        Welcome to ASI at Long Beach State
-                                        University! We are excited to have you
-                                        as a part of the Beach community for the
-                                        new 2020-2021 school year. Although
-                                        things may look different for the coming
-                                        semester due to the global pandemic, we
-                                        want you to know that our ASI resources
-                                        and services are still open and
-                                        available to you. As part of your
-                                        orientation, in order to learn more
-                                        about the student body, LBSU and our
-                                        history we have put together a fun and
-                                        informative quiz for you to take. Test
-                                        out your knowledge, take in some Beach
-                                        facts, and who knows you may even win a
-                                        prize in the process!{" "}
-                                    </p>
-                                    <Button
-                                        size="lg"
-                                        href="/quiz"
-                                        variant="primary">
-                                        PLAY THE GAME!
-                                    </Button>
-                                </Jumbotron>
+                                <h1 className="sr-only h-1">
+                                    Introduction and Rules
+                                </h1>
+                                <p className="my-2">
+                                    Welcome to ASI at Long Beach State
+                                    University! We are excited to have you as a
+                                    part of the Beach community for the new
+                                    2020-2021 school year. Although things may
+                                    look different for the coming semester due
+                                    to the global pandemic, we want you to know
+                                    that our ASI resources and services are
+                                    still open and available to you. As part of
+                                    your orientation, in order to learn more
+                                    about the student body, LBSU and our history
+                                    we have put together a fun and informative
+                                    quiz for you to take. Test out your
+                                    knowledge, take in some Beach facts, and who
+                                    knows you may even win a prize in the
+                                    process!{" "}
+                                </p>
+                                <Button
+                                    size="lg"
+                                    href="/quiz"
+                                    variant="primary">
+                                    PLAY THE GAME!
+                                </Button>
                                 <hr />
                                 <p>
                                     <strong>
