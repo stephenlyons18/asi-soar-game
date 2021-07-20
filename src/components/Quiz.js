@@ -1,25 +1,22 @@
 import React, { Component } from "react"
-import "./Quiz.css"
+import "./styles.css"
 
 // React Bootstrap Components
 import {
     Alert,
-    Button,
     Col,
     Container,
     Image,
-    Jumbotron,
     ProgressBar,
     Row,
     Spinner,
-    ToggleButton,
-    ToggleButtonGroup,
-    ResponsiveEmbed,
+    ButtonGroup,
+    Button,
 } from "react-bootstrap"
 
-// React Icons Components
-import { BsArrowLeft } from "react-icons/bs"
-import { BsArrowRight } from "react-icons/bs"
+// Custom Components
+import Passed from "./Passed"
+import Failed from "./Failed"
 
 class Quiz extends Component {
     constructor(props) {
@@ -33,6 +30,8 @@ class Quiz extends Component {
             hasFailed: false,
             error: null,
             uploadSuccess: false,
+            progress: 0,
+            isLastQuestion: false,
         }
         this.allQuestions = []
         this.userForm = {}
@@ -58,15 +57,19 @@ class Quiz extends Component {
             )
     }
 
-    resetQuiz = () => {
-        this.initQuestions()
-        this.setState({
-            current: 0,
-            answers: [],
-            hasFailed: false,
-        })
-        this.score = 0
-    }
+    // resetQuiz = () => {
+
+    //     // console.log("I WAS CALLED")
+    //     // this.setState({
+    //     //     current: 0,
+    //     //     answers: [],
+    //     //     hasFailed: false,
+    //     // })
+    //     // this.initQuestions()
+    //     // this.score = 0
+    //     // console.log("I SHOULD BE 0! " + this.state.current)
+    //     // console.log("I SHOULD BE EMPTY! " + this.state.answers)
+    // }
 
     initQuestions = () => {
         this.shuffleQuestions(this.allQuestions)
@@ -76,13 +79,13 @@ class Quiz extends Component {
         })
     }
 
-    saveQuestion = (val) => {
+    saveQuestion = (value) => {
         this.setState((state) => {
             const newAnswers = [...state.answers]
-            newAnswers[state.current] = val
-            return {
-                answers: newAnswers,
-            }
+            newAnswers[state.current] = value
+            state.progress = state.current * 10
+            state.answers = newAnswers
+            console.table(state.answers)
         })
     }
 
@@ -100,12 +103,13 @@ class Quiz extends Component {
         }
     }
 
-    navRight = () => {
-        if (this.state.current < this.state.currentQuestions.length - 1) {
-            this.setState((state) => ({
-                current: state.current + 1,
-            }))
-        }
+    navRight = (value) => {
+        this.setState((state) => ({
+            current: state.current + 1,
+            isLastQuestion:
+                state.current === this.state.currentQuestions.length - 1,
+        }))
+        this.saveQuestion(value)
     }
 
     shuffleQuestions = (array) => {
@@ -116,12 +120,28 @@ class Quiz extends Component {
     }
 
     checkAnswers = () => {
+        if (this.state.answers[0] === undefined) {
+            this.state.answers.shift()
+        }
+        console.log(this.state.answers)
         this.state.answers.forEach((value, index) => {
-            if (value === this.state.currentQuestions[index].correctAnswer) {
-                this.score++
+            if (
+                !(this.state.currentQuestions[index] === undefined || index > 9)
+            ) {
+                console.log(
+                    "CURRENT QUESTIONS ARRAY: " +
+                        this.state.currentQuestions[index].correctAnswer,
+                )
+                console.log("ANSWERS ARRAY: " + this.state.answers)
+                if (
+                    value === this.state.currentQuestions[index].correctAnswer
+                ) {
+                    console.log("YOU GOT IT RIGHT AT INDEX: " + index)
+                    this.score++
+                }
             }
         })
-
+        console.log("SCORE: ", this.score)
         if (this.score >= 7) {
             this.setState({
                 hasPassed: true,
@@ -183,121 +203,15 @@ class Quiz extends Component {
             return null
         } else if (!this.state.isLoaded) {
             return (
-                <Container fluid>
-                    <Row>
-                        <Col>
-                            <Spinner
-                                animation="border"
-                                variant="primary"
-                                role="status">
-                                <span className="sr-only">Loading...</span>
-                            </Spinner>
-                        </Col>
-                    </Row>
+                <Container className="text-center my-5">
+                    <Spinner
+                        animation="border"
+                        variant="primary"
+                        role="status"></Spinner>
                 </Container>
             )
         } else if (this.state.hasPassed) {
-            return (
-                <div className="background2">
-                    <Container fluid>
-                        <div className="splash">
-                            <div className="text-center">
-                                <Image
-                                    src="https://soar-images.s3-us-west-1.amazonaws.com/ASI%2BLBSUlogo_wide_CMYK-CLR.jpg"
-                                    fluid
-                                    style={{ height: 150, width: 300 }}
-                                />
-
-                                <h3>
-                                    Congratuations! You scored {this.score}/10!
-                                </h3>
-                                <p>
-                                    Great job! You have{" "}
-                                    <span className="gold-text">UNLOCKED</span>{" "}
-                                    the prize entry portal and are ready for
-                                    life at the Beach. Please enter your
-                                    information below. Many incoming students
-                                    are still going through SOAR, so we will
-                                    announce the prizes the week of Feb. 8th.
-                                    Our team will contact you through the CSULB
-                                    email you use below, so make sure it is
-                                    accurate.
-                                </p>
-                            </div>
-                            <Row>
-                                <Col>
-                                    <ResponsiveEmbed>
-                                        <iframe
-                                            src="https://csulb.qualtrics.com/jfe/form/SV_6E8EAzBlCWPZISF"
-                                            aspectRatio="16by9"></iframe>
-                                    </ResponsiveEmbed>
-                                    <div className="text-center">
-                                        <h4>
-                                            Click
-                                            <a
-                                                href="https://www.asicsulb.org/corporate/"
-                                                target="_blank">
-                                                {" "}
-                                                here
-                                            </a>{" "}
-                                            to navigate to ASI's home page
-                                        </h4>
-                                    </div>
-                                    <hr />
-                                    <div className="footer">
-                                        <p>
-                                            1212 Bellflower Blvd., USU-229, Long
-                                            Beach, California 90815 (562)
-                                            985-4834 |
-                                            <a href="mailto:asi-studentunion@csulb.edu">
-                                                {" "}
-                                                asi-studentunion@csulb.edu
-                                            </a>
-                                        </p>
-                                        <hr />
-                                        <p>
-                                            <a
-                                                href="https://www.asicsulb.org/corporate/"
-                                                target="_blank">
-                                                ASI |{" "}
-                                            </a>
-                                            <a
-                                                href="https://www.asicsulb.org/gov/"
-                                                target="_blank">
-                                                Student Government
-                                            </a>{" "}
-                                            |{" "}
-                                            <a
-                                                href="https://www.asirecreation.org/"
-                                                target="_blank">
-                                                SRWC
-                                            </a>{" "}
-                                            |{" "}
-                                            <a
-                                                href="https://www.22westmedia.com/"
-                                                target="_blank">
-                                                22 West Media
-                                            </a>{" "}
-                                            |{" "}
-                                            <a
-                                                href="https://www.csulb.edu/"
-                                                target="_blank">
-                                                CSULB
-                                            </a>
-                                        </p>
-                                        <p>
-                                            <i>
-                                                Copyright © 2020. Associated
-                                                Students, Inc
-                                            </i>
-                                        </p>
-                                    </div>
-                                </Col>
-                            </Row>
-                        </div>
-                    </Container>
-                </div>
-            )
+            return <Passed score={this.score} />
         } else if (this.state.hasFailed) {
             if (Window.width > 360) {
                 return (
@@ -306,131 +220,26 @@ class Quiz extends Component {
                     </Alert>
                 )
             } else {
-                return (
-                    <div className="background-failed">
-                        <Container fluid>
-                            <Row>
-                                <Col className="fullHeight d-flex align-items-center">
-                                    <Alert
-                                        variant="danger"
-                                        className="mx-auto p-4 noticeAlert">
-                                        <Alert.Heading className="text-center">
-                                            Shoot, you didn't pass. You got a{" "}
-                                            {this.score}/10
-                                        </Alert.Heading>
-                                        <p>
-                                            But not to worry, you can try again!
-                                            Take some time to review the
-                                            resources available to you on the
-                                            main page at{" "}
-                                            <a href="http://soar2020.s3-website-us-west-1.amazonaws.com/">
-                                                www.asicsulb.org/soar
-                                            </a>
-                                            . You're almost there!
-                                        </p>
-                                        <p>
-                                            UNLOCK the prize entry portal by
-                                            testing out your knowledge and
-                                            taking in some Beach facts. Get 7
-                                            out of 10 right and enter yourself
-                                            to win one of many great prizes –
-                                            which include Apple AirPods, Beach
-                                            swag, apparel, Hydroflasks, and so
-                                            much more!
-                                        </p>
-                                        <hr />
-                                        <div className="d-flex justify-content-center">
-                                            <Button
-                                                variant="danger"
-                                                size="lg"
-                                                onClick={this.resetQuiz}>
-                                                Let's Try Again
-                                            </Button>
-                                        </div>
-                                    </Alert>
-                                </Col>
-                            </Row>
-                        </Container>
-                    </div>
-                )
+                return <Failed score={this.score} resetQuiz={this.resetQuiz} />
             }
         } else {
             return (
-                <>
-                    <div className="Quiz">
-                        <Container fluid>
-                            <Image
-                                src={
-                                    this.state.currentQuestions[
-                                        this.state.current
-                                    ].imageSrc
-                                }
-                                alt={
-                                    this.state.currentQuestions[
-                                        this.state.current
-                                    ].altText
-                                }
-                                fluid
-                            />
-
-                            <Row>
-                                <Col>
-                                    <ProgressBar
-                                        now={this.state.progress}
-                                        label={`${this.state.progress}%`}
-                                    />
-                                    <Jumbotron className="jumbo" fluid>
-                                        <BsArrowLeft
-                                            className="text-primary nav-arrows left"
-                                            onClick={this.navLeft}
-                                        />
-                                        <h3
-                                            style={{
-                                                paddingLeft: 100,
-                                                paddingRight: 100,
-                                            }}>
-                                            {
-                                                this.state.currentQuestions[
-                                                    this.state.current
-                                                ].text
-                                            }
-                                        </h3>
-                                        <BsArrowRight
-                                            className="text-primary nav-arrows right"
-                                            onClick={this.navRight}
-                                        />
-                                    </Jumbotron>
-                                </Col>
-                            </Row>
-
-                            <Row>
-                                <Col>
-                                    <ToggleButtonGroup
-                                        className="answerButtons"
-                                        size="lg"
-                                        name={"question-" + this.state.current}
-                                        value={
-                                            this.state.answers[
-                                                this.state.current
-                                            ] || null
-                                        }
-                                        onChange={this.saveQuestion}
-                                        vertical={window.innerWidth < 780}>
-                                        {this.state.currentQuestions[
-                                            this.state.current
-                                        ].options.map((option) => (
-                                            <ToggleButton
-                                                key={option.value}
-                                                value={option.value}
-                                                variant="outline-primary">
-                                                {option.text}
-                                            </ToggleButton>
-                                        ))}
-                                    </ToggleButtonGroup>
-                                </Col>
-                            </Row>
-
-                            {this.state.isLastQuestion && (
+                <Container className="my-5">
+                    <div
+                        className="bg-dark text-center py-2"
+                        style={{ height: "100%", borderRadius: "5px" }}>
+                        <Row>
+                            <Col>
+                                <ProgressBar
+                                    now={this.state.progress}
+                                    label={`${this.state.progress}%`}
+                                    animated
+                                    className="my-2 mx-3"
+                                />
+                            </Col>
+                        </Row>
+                        {this.state.isLastQuestion ? (
+                            <>
                                 <Row className="mt-4">
                                     <Col>
                                         <Button
@@ -442,10 +251,77 @@ class Quiz extends Component {
                                         <br />
                                     </Col>
                                 </Row>
-                            )}
-                        </Container>
+                            </>
+                        ) : (
+                            <>
+                                <Row>
+                                    <Col>
+                                        <Image
+                                            src={
+                                                this.state.currentQuestions[
+                                                    this.state.current
+                                                ].imageSrc
+                                            }
+                                            alt={
+                                                this.state.currentQuestions[
+                                                    this.state.current
+                                                ].altText
+                                            }
+                                            width="95%"
+                                            rounded
+                                            style={{
+                                                opacity: "0.9",
+                                                borderTop: "3px solid #e83283",
+                                                borderBottom:
+                                                    "3px solid #3a8fd9",
+                                                marginBottom: "5%",
+                                            }}
+                                        />
+                                        <h1>
+                                            {
+                                                this.state.currentQuestions[
+                                                    this.state.current
+                                                ].text
+                                            }
+                                        </h1>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <ButtonGroup
+                                            className="answerButtons"
+                                            size="lg"
+                                            name={
+                                                "question-" + this.state.current
+                                            }
+                                            value={
+                                                this.state.answers[
+                                                    this.state.current
+                                                ] || null
+                                            }
+                                            vertical={window.innerWidth < 780}>
+                                            {this.state.currentQuestions[
+                                                this.state.current
+                                            ].options.map((option) => (
+                                                <Button
+                                                    key={option.value}
+                                                    value={option.value}
+                                                    variant="outline-primary"
+                                                    onClick={() =>
+                                                        this.navRight(
+                                                            option.value,
+                                                        )
+                                                    }>
+                                                    {option.text}
+                                                </Button>
+                                            ))}
+                                        </ButtonGroup>
+                                    </Col>
+                                </Row>
+                            </>
+                        )}
                     </div>
-                </>
+                </Container>
             )
         }
     }
