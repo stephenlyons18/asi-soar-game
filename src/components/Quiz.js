@@ -17,6 +17,7 @@ import {
 // Custom Components
 import Passed from "./Passed"
 import Failed from "./Failed"
+import QuestionsURL from "../Questions"
 
 class Quiz extends Component {
     constructor(props) {
@@ -41,7 +42,7 @@ class Quiz extends Component {
 
     componentDidMount() {
         // Get all questions from server
-        fetch("https://soarquestions.s3-us-west-1.amazonaws.com/questions.json")
+        fetch(QuestionsURL)
             .then((res) => res.json())
             .then(
                 (result) => {
@@ -153,50 +154,7 @@ class Quiz extends Component {
         }
     }
 
-    submit = (event) => {
-        // TODO: Form validation
-
-        event.preventDefault()
-        event.stopPropagation()
-
-        // Prepare data to send to server
-        const data = {
-            student_id: this.userForm.studentID,
-            firstName: this.userForm.firstName,
-            lastName: this.userForm.lastName,
-            email: this.userForm.email,
-            score: this.score,
-        }
-
-        console.log(data)
-
-        // TODO: Uncomment below to test server
-
-        fetch(
-            "https://309u5urphk.execute-api.us-west-1.amazonaws.com/pre-test-1/uploadscore",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "x-api-key": "PTf2wlXBFd52BtT3IHotQ2u3lUdxgCN4zNJtgd5b",
-                },
-                body: JSON.stringify(data),
-            },
-        )
-            .then((res) => res.json())
-            .then(
-                (result) => {
-                    console.log(result)
-                },
-                (error) => {
-                    console.log(error)
-                },
-            )
-        this.setState({
-            uploadSuccess: true,
-        })
-    }
-
+   
     render() {
         if (this.state.error) {
             // TODO: Show an error message
@@ -227,7 +185,7 @@ class Quiz extends Component {
                 <Container className="my-5">
                     <div
                         className="bg-dark text-center py-2"
-                        style={{ height: "100%", borderRadius: "5px" }}>
+                        style={{ height: "100%", borderRadius: "40px" }}>
                         <Row>
                             <Col>
                                 <ProgressBar
@@ -287,7 +245,7 @@ class Quiz extends Component {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Col>
+                                    <Col className="mx-2">
                                         <ButtonGroup
                                             className="answerButtons"
                                             size="lg"
