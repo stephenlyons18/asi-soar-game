@@ -1,16 +1,15 @@
 import React from "react"
 import {
-    Button,
     Col,
     Container,
     Image,
     Row,
-    ResponsiveEmbed,
+    Button,
     ButtonGroup,
 } from "react-bootstrap"
 import "./styles.css"
 
-const Introduction = () => {
+const Passed = (props) => {
     return (
         <div className="rules-background">
             <Container fluid>
@@ -25,83 +24,23 @@ const Introduction = () => {
                                     width="75%"
                                     className="mb-2"
                                 />
-                                <h1 className="sr-only h-1">
-                                    Introduction and Rules
-                                </h1>
-                                <p className="my-2 pull-left">
-                                    Welcome to ASI at Long Beach State
-                                    University! We are excited to have you as a
-                                    part of the Beach community for the new
-                                    2020-2021 school year. Although things may
-                                    look different for the coming semester due
-                                    to the global pandemic, we want you to know
-                                    that our ASI resources and services are
-                                    still open and available to you. As part of
-                                    your orientation, in order to learn more
-                                    about the student body, LBSU and our history
-                                    we have put together a fun and informative
-                                    quiz for you to take. Test out your
-                                    knowledge, take in some Beach facts, and who
-                                    knows you may even win a prize in the
-                                    process!{" "}
-                                </p>
+                                <h3>
+                                    Congratuations! You scored {props.score} /
+                                    10! That's {(props.score / 10) * 100}%!
+                                </h3>
                                 <hr />
                                 <p className="pull-left">
-                                    Before playing the game, take a moment to
-                                    review the resources and rules below
+                                    Great job! You have{" "}
+                                    <span className="gold-text">UNLOCKED</span>{" "}
+                                    the prize entry portal and are ready for
+                                    life at the Beach. Please enter your
+                                    information below. Many incoming students
+                                    are still going through SOAR, so we will
+                                    announce the prizes the week of Feb. 8th.
+                                    Our team will contact you through the CSULB
+                                    email you use below, so make sure it is
+                                    accurate.
                                 </p>
-                                <div
-                                    style={{
-                                        width: "auto",
-                                        height: "auto",
-                                    }}>
-                                    <ResponsiveEmbed aspectRatio="16by9">
-                                        <iframe
-                                            width="100%"
-                                            height="400"
-                                            title="Soar Game Introduction"
-                                            src="https://www.youtube.com/embed/6cftoxb0uOM"
-                                            frameBorder="0"
-                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                            allowFullScreen></iframe>
-                                    </ResponsiveEmbed>
-                                </div>
-                                <hr />
-                                <h2>Rules of the Game</h2>
-                                <ol className="pull-left">
-                                    <li>
-                                        Only newly entering students
-                                        (transfer/first year) may enter{" "}
-                                    </li>
-                                    <li>
-                                        Must enter a valid CSULB ID number and
-                                        email address to enter{" "}
-                                    </li>
-                                    <li>
-                                        This is the honor system - please do not
-                                        share answers{" "}
-                                    </li>
-                                    <li>
-                                        Only passing scores (70%) will be
-                                        entered to win prizes{" "}
-                                    </li>
-                                    <li>
-                                        Students may take the quiz as many times
-                                        as it takes them to pass{" "}
-                                    </li>
-                                    <li>
-                                        Once you do pass, feel free to take the
-                                        quiz again, but you can only enter one
-                                        time per student ID
-                                    </li>
-                                    <li>One prize maximum per student entry</li>
-                                    <li>Have fun and learn new things! </li>
-                                </ol>
-                                <div className="text-center">
-                                    <Button href="/quiz" variant="primary">
-                                        PLAY THE GAME
-                                    </Button>
-                                </div>
                                 <hr />
                                 <p className="pull-left">
                                     <span className="red-text">
@@ -188,4 +127,4 @@ const Introduction = () => {
     )
 }
 
-export default Introduction
+export default Passed
