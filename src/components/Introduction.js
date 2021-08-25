@@ -60,7 +60,7 @@ const Introduction = () => {
                                             width="100%"
                                             height="400"
                                             title="Soar Game Introduction"
-                                            src="https://www.youtube.com/embed/6cftoxb0uOM"
+                                            src="https://www.youtube.com/embed/YlldPZ1ZZsc"
                                             frameBorder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowFullScreen></iframe>
