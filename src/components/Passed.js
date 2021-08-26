@@ -13,7 +13,7 @@ const Passed = (props) => {
     return (
         <div className="rules-background">
             <Container fluid>
-                <div className="splash bg-dark">
+                <div className="splash bg-dark px-2">
                     <Row>
                         <Col>
                             <div className="text-center">
@@ -42,6 +42,13 @@ const Passed = (props) => {
                                     accurate.
                                 </p>
                                 <hr />
+                                <iframe
+                                width="95%"
+                                height="889"
+                                title="Soar Game Introduction"
+                                style={{borderRadius: "10px"}}
+                                src="https://csulb.qualtrics.com/jfe/form/SV_6E8EAzBlCWPZISF" />
+                                <hr/>
                                 <p className="pull-left">
                                     <span className="red-text">
                                         Prizes and winners will be announced the
