@@ -36,7 +36,7 @@ const Passed = (props) => {
                                     life at the Beach. Please enter your
                                     information below. Many incoming students
                                     are still going through SOAR, so we will
-                                    announce the prizes the week of Feb. 8th.
+                                    announce the prizes the week of Sept 27th.
                                     Our team will contact you through the CSULB
                                     email you use below, so make sure it is
                                     accurate.
@@ -52,7 +52,7 @@ const Passed = (props) => {
                                 <p className="pull-left">
                                     <span className="red-text">
                                         Prizes and winners will be announced the
-                                        week of August 31st!
+                                        week of September 27th!
                                     </span>{" "}
                                     Keep an eye out in your CSULB email inbox
                                     for updates as the date nears.
@@ -133,5 +133,4 @@ const Passed = (props) => {
         </div>
     )
 }
-
 export default Passed

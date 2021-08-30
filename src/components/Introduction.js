@@ -106,7 +106,7 @@ const Introduction = () => {
                                 <p className="pull-left">
                                     <span className="red-text">
                                         Prizes and winners will be announced the
-                                        week of August 31st!
+                                        week of September 27th!
                                     </span>{" "}
                                     Keep an eye out in your CSULB email inbox
                                     for updates as the date nears.
